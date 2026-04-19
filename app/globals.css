@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --bg-page: #F9F9F9;
+    --bg-card: #ffffff;
+    --bg-dark: #010309;
+    --color-primary: #e1443a;
+    --color-text: #171717;
+    --color-text-muted: #404040;
+    --color-text-subtle: #737373;
+    --color-border: #ebecef;
+    --color-border-dark: #0c111c;
+    --framer-gradient: linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,1) 100%);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 112.5%; /* 18px base */
+  }
+
+  body {
+    @apply min-h-screen bg-[#F9F9F9] text-[#171717] font-sans;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Ensure smooth scrolling on Safari */
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-[1136px] mx-auto px-8;
+  }
+   
+  .section-label {
+    @apply flex items-center gap-2 mb-4;
+  }
+   
+  .section-label-dot {
+    @apply w-2 h-2 bg-[#e1443a] rounded-sm;
+  }
+   
+  .section-title {
+    @apply text-[40px] font-bold tracking-tighter;
+    font-family: 'Satoshi', sans-serif;
+    letter-spacing: -0.05em;
+  }
+   
+  .section-subtitle {
+    @apply text-lg text-[#5d636f] tracking-tight;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+  }
+   
+  .card {
+    @apply bg-white border border-[#ebecef] rounded-[32px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
+  }
+   
+  .card-lg {
+    @apply bg-white border border-[#ebecef] rounded-[40px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
+  }
+   
+  .card-xl {
+    @apply bg-white border border-[#ebecef] rounded-[64px] p-6 shadow-[0_4px_32px_rgba(0,0,0,0.03)];
+  }
+  
+  .btn-primary {
+    @apply bg-[#e1443a] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-[#d43a32] hover:shadow-lg;
+    font-family: 'Satoshi', sans-serif;
+  }
+  
+  .btn-light {
+    @apply bg-white text-[#e1443a] px-6 py-3 rounded-full border border-[#e1443a] font-medium transition-all duration-300 hover:bg-[#e1443a] hover:text-white hover:shadow-lg;
+    font-family: 'Satoshi', sans-serif;
+  }
+  
+  .btn-outline {
+    @apply bg-white text-[#171717] px-6 py-3 rounded-full border border-[#ebecef] font-medium transition-all duration-300 hover:bg-[#f6f7f8] hover:shadow-lg;
+    font-family: 'Satoshi', sans-serif;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+   
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+   
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+   
+  .animate-pulse-slow {
+    animation: pulse 2s ease-in-out infinite;
+  }
+   
+  .animate-scale-in {
+    animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+   
+  .animate-fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+   
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+  .stagger-7 { animation-delay: 0.7s; }
+  .stagger-8 { animation-delay: 0.8s; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.framer-badge-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dot-pattern {
+  background-image: radial-gradient(circle, #d4d8dd 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #171717 0%, #5d636f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e1443a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d43a32;
+}
+
+/* Override Tailwind's default transitions for more natural feel */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 0.3s;
+}
+
+/* Fix for Next.js image optimization */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
