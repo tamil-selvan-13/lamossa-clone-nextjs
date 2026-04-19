@@ -59,49 +59,43 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-[1100px] mx-auto px-6 relative z-10 w-full">
+      <div className="max-w-[1120px] mx-auto px-[24px] relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
-          <div
-            className="inline-flex items-center justify-center gap-2 px-4 py-1.5 mb-8 bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold"
+          <div 
+            className="inline-flex items-center justify-center gap-[8px] px-[16px] py-[6px] mb-[32px] bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold border border-black/[0.03]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
-            <div className="relative flex items-center justify-center w-2 h-2">
+            <div className="relative flex items-center justify-center w-[8px] h-[8px]">
               <span className="absolute inline-flex w-full h-full rounded-full bg-[#22C55E] opacity-75 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
-              <span className="relative inline-flex rounded-full w-2 h-2 bg-[#22C55E]"></span>
+              <span className="relative inline-flex rounded-full w-[8px] h-[8px] bg-[#22C55E]"></span>
             </div>
             Open for work
           </div>
 
-          <h1
-            className="text-[72px] font-semibold text-[#171717] leading-[1.05] tracking-tight max-w-[900px] mx-auto"
+          <h1 
+            className="text-[68px] font-semibold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[850px] mx-auto"
             style={{ fontFamily: 'Satoshi, sans-serif', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.1s' }}
           >
             Web & Brand Design For Ambitious Founders
           </h1>
 
-          <p
-            className="text-lg text-[#404040] mt-8 mb-8 max-w-[480px] w-full mx-auto leading-relaxed"
+          <p 
+            className="text-[18px] text-[#404040] mt-[32px] mb-[32px] max-w-[480px] w-full mx-auto leading-[1.6]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.2s' }}
           >
             We build conversion-driven websites and marketing that attract, engage, and convert.
           </p>
 
-          <div
-            className="flex flex-row justify-center items-center gap-8 mb-8"
+          <div 
+            className="flex flex-row justify-center items-center gap-[16px] mb-[48px]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.3s' }}
           >
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center justify-center gap-2 bg-[#000000] text-white rounded-full px-8 py-4 font-semibold transition hover:-translate-y-1 shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-            >
+            <Button href="/contact-us" variant="dark">
               Book A Call
-            </Link>
-            <Link
-              href="/projects"
-              className="inline-flex items-center justify-center bg-[#F9FAFB] text-[#111827] border border-[#E5E7EB] rounded-full px-8 py-4 font-semibold transition hover:bg-gray-50"
-            >
+            </Button>
+            <Button href="/projects" variant="light">
               View Projects
-            </Link>
+            </Button>
           </div>
 
           <div
@@ -131,7 +125,7 @@ export default function Hero() {
           {leftQuotes.map((q, i) => (
             <div
               key={i}
-              className="absolute bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[22px] p-5 w-[220px] text-sm"
+              className="absolute bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[22px] p-5 w-[220px] text-sm"
               style={{
                 transform: `rotate(${leftRotations[i]}deg)`,
                 top: `${i * 165}px`,
@@ -150,7 +144,7 @@ export default function Hero() {
           {rightQuotes.map((q, i) => (
             <div
               key={i}
-              className="absolute bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[22px] p-5 w-[220px] text-sm"
+              className="absolute bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[22px] p-5 w-[220px] text-sm"
               style={{
                 transform: `rotate(${rightRotations[i]}deg)`,
                 top: `${i * 165}px`,

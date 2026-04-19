@@ -17,8 +17,8 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className={`sticky top-0 left-0 right-0 z-[100] transition-all duration-300 h-[72px] flex items-center ${scrolled ? 'backdrop-blur-lg bg-white/[0.04] border-b border-white/[0.08]' : 'bg-transparent border-b border-transparent'}`}>
-      <div className="w-full max-w-[1100px] mx-auto px-6">
+    <nav className={`sticky top-0 left-0 right-0 z-[100] transition-all duration-300 h-[72px] flex items-center ${scrolled ? 'backdrop-blur-lg bg-white/[0.03] border-b border-white/[0.08]' : 'bg-transparent border-b border-transparent'}`}>
+      <div className="w-full max-w-[1120px] mx-auto px-[24px]">
         <div className="w-full flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">

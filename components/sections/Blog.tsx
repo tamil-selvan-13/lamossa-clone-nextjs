@@ -35,8 +35,8 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="section-blogs" className="py-28 pb-12 bg-[#F9F9F9]">
-      <div className="max-w-[1100px] mx-auto px-6">
+    <section id="section-blogs" className="py-[120px] pb-12 bg-[#F9F9F9]">
+      <div className="max-w-[1120px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-start mb-12">
           <SectionTag text="OUR BLOG" color="#10B981" />
           <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-8">
@@ -47,9 +47,9 @@ export default function Blog() {
           </p>
         </FadeIn>
 
-        <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
+        <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] overflow-hidden group">
+            <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] overflow-hidden group">
               <div className="aspect-[5/4] relative bg-gray-100">
                 <Image 
                   src={posts[0].image}
@@ -90,7 +90,7 @@ export default function Blog() {
 
             <div className="space-y-6">
               {posts.slice(1).map((post, i) => (
-                <div key={i} className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-4 flex gap-4 group">
+                <div key={i} className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-4 flex gap-4 group">
                   <div className="w-[30%] aspect-square relative bg-gray-100 rounded-2xl overflow-hidden">
                     <Image 
                       src={post.image}

@@ -45,7 +45,7 @@ function ProcessStep({ step, i, totalSteps, scrollYProgress }: ProcessStepProps)
 
       <div className="pl-[48px]">
         <FadeIn delay={i * 0.1}>
-          <div className="flex flex-col bg-white/[0.04] backdrop-blur-lg p-8 rounded-3xl border border-white/[0.08] shadow-sm hover:shadow-[0_4px_24px_rgba(0,0,0,0.04)] transition-shadow duration-300 w-full">
+          <div className="flex flex-col bg-white/[0.03] backdrop-blur-lg p-8 rounded-3xl border border-white/[0.08] shadow-sm hover:shadow-[0_4px_24px_rgba(0,0,0,0.04)] transition-shadow duration-300 w-full">
             <h2 className="text-[22px] font-bold text-[#111827] mb-[8px] tracking-tight">
               {step.title}
             </h2>
@@ -74,8 +74,8 @@ export default function Process() {
   });
 
   return (
-    <section id="section-process" className="py-28 bg-[#F9F9F9]">
-      <div className="max-w-[1100px] mx-auto px-6">
+    <section id="section-process" className="py-[120px] bg-[#F9F9F9]">
+      <div className="max-w-[1120px] mx-auto px-[24px]">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           

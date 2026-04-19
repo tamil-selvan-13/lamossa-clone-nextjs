@@ -24,8 +24,8 @@ export default function Stats() {
   }, []);
 
   return (
-    <section id="section-stats" className="py-28 bg-[#F9F9F9]" ref={ref}>
-      <div className="max-w-[1100px] mx-auto px-6">
+    <section id="section-stats" className="py-[120px] bg-[#F9F9F9]" ref={ref}>
+      <div className="max-w-[1120px] mx-auto px-[24px]">
         <div className="flex items-center gap-2 justify-center mb-8">
           <span className="w-2 h-2 bg-[#e1443a] rounded-sm" />
           <span className="text-base text-[#404040]">Impact</span>
@@ -41,7 +41,7 @@ export default function Stats() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-6 transition-all duration-700 ease-out hover:shadow-lg hover:scale-[1.02]"
+              className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-6 transition-all duration-700 ease-out hover:shadow-lg hover:scale-[1.02]"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? 'translateY(0)' : 'translateY(24px)',

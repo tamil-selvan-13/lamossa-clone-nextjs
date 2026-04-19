@@ -9,7 +9,7 @@
   :root {
     --bg-page: #F9F9F9;
     --bg-card: #ffffff;
-    --bg-dark: #010309;
+    --bg-dark: #000000;
     --color-primary: #e1443a;
     --color-text: #171717;
     --color-text-muted: #404040;
@@ -39,7 +39,7 @@
 
 @layer components {
   .container-main {
-    @apply max-w-[1136px] mx-auto px-8;
+    @apply max-w-[1120px] mx-auto px-[24px];
   }
    
   .section-label {
@@ -63,15 +63,15 @@
   }
    
   .card {
-    @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
+    @apply bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
   }
    
   .card-lg {
-    @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[40px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
+    @apply bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[40px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
   }
    
   .card-xl {
-    @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6 shadow-[0_4px_32px_rgba(0,0,0,0.03)];
+    @apply bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6 shadow-[0_4px_32px_rgba(0,0,0,0.03)];
   }
   
   .btn-primary {
@@ -183,7 +183,7 @@
 }
 
 .glass-effect {
-  @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.08];
+  @apply bg-white/[0.03] backdrop-blur-lg border border-white/[0.08];
 }
 
 .text-gradient {

@@ -12,8 +12,8 @@ const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
 export default function LogoMarquee() {
   return (
-    <section className="py-28 bg-white overflow-hidden select-none">
-      <div className="w-full max-w-[1100px] mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+    <section className="py-[120px] bg-white overflow-hidden select-none">
+      <div className="w-full max-w-[1120px] mx-auto px-[24px] flex flex-col md:flex-row items-center gap-8">
         
         {/* 1. The Label */}
         <div 

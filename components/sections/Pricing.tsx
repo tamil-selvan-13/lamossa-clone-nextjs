@@ -55,8 +55,8 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="section-pricing" className="py-28 bg-[#F9F9F9]" ref={ref}>
-      <div className="max-w-[1100px] mx-auto px-6">
+    <section id="section-pricing" className="py-[120px] bg-[#F9F9F9]" ref={ref}>
+      <div className="max-w-[1120px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-center text-center mb-16">
           <SectionTag text="CHOOSE A PLAN." color="#8B5CF6" />
           <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-8">

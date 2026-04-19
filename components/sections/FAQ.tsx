@@ -18,7 +18,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="section-faq" className="py-28 bg-[#F9F9F9]">
+    <section id="section-faq" className="py-[120px] bg-[#F9F9F9]">
       <div className="max-w-[800px] mx-auto px-6">
         
         <FadeIn className="flex flex-col items-center text-center mb-16">

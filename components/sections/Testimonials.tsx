@@ -27,8 +27,8 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <FadeIn className="py-28 bg-[#F9F9F9]">
-      <div className="max-w-[1100px] mx-auto px-6" ref={ref}>
+    <FadeIn className="py-[120px] bg-[#F9F9F9]">
+      <div className="max-w-[1120px] mx-auto px-[24px]" ref={ref}>
         <div className="flex flex-col items-start mb-12">
           {/* Framer motion wrapper configured specifically for the requested 20px slide distance */}
           <motion.div
@@ -47,7 +47,7 @@ export default function Testimonials() {
           </motion.div>
         </div>
 
-        <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
+        <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
               <div

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '../ui/Button';
 import FadeIn from '../ui/FadeIn';
 
 const services = [
@@ -28,8 +29,8 @@ export default function Services() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="section-services" className="py-28 bg-[#F9F9F9]">
-      <div className="max-w-[1100px] mx-auto px-6">
+    <section id="section-services" className="py-[120px] bg-[#F9F9F9]">
+      <div className="max-w-[1120px] mx-auto px-[24px]">
         
         <FadeIn>
           <div className="flex flex-col md:flex-row justify-between items-end mb-[64px] gap-8">
@@ -39,20 +40,14 @@ export default function Services() {
                 <span className="text-base text-[#404040]">Services</span>
               </div>
               
-              <h1 className="text-[48px] font-bold tracking-tight text-[#000000] font-sans max-w-[600px] leading-[1.1]">
+              <h1 className="text-[40px] font-bold tracking-[-0.05em] text-[#000000] font-sans max-w-[600px] leading-[1.1]">
                 From idea to scale. We master our craft.
               </h1>
             </div>
 
-            <Link 
-              href="/contact-us"
-              className="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-[#000000] text-white rounded-full py-[14px] px-[32px] font-semibold transition hover:bg-[#1a1a1a]"
-            >
+            <Button href="/contact-us" variant="dark">
               Start A Project
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </Link>
+            </Button>
           </div>
         </FadeIn>
 
@@ -63,7 +58,7 @@ export default function Services() {
             {services.map((service, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div
-                  className={`bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] overflow-hidden transition-all duration-300 hover:shadow-md cursor-pointer ${openIndex === i ? 'shadow-md' : ''}`}
+                  className={`bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] overflow-hidden transition-all duration-300 hover:shadow-md cursor-pointer ${openIndex === i ? 'shadow-md' : ''}`}
                 >
                   <button
                     className="w-full flex items-center gap-4 p-5 text-left"
@@ -100,7 +95,7 @@ export default function Services() {
 
           <FadeIn delay={0.4}>
             <div className="hidden lg:block relative sticky top-24">
-              <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-4 shadow-lg">
+              <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-4 shadow-lg">
                 <div className="aspect-[5/4] relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-[24px] overflow-hidden group">
                   <Image 
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=640&fit=crop"

@@ -30,8 +30,8 @@ export default function Projects() {
   }, []);
 
   return (
-    <FadeIn className="py-28 bg-[#F9F9F9]">
-      <div className="max-w-[1100px] mx-auto px-6" ref={ref}>
+    <FadeIn className="py-[120px] bg-[#F9F9F9]">
+      <div className="max-w-[1120px] mx-auto px-[24px]" ref={ref}>
         <div className="flex flex-col items-start mb-12">
           <SectionTag text="PROJECTS" color="#FF4D4D" />
           <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1]">
@@ -39,12 +39,12 @@ export default function Projects() {
           </h2>
         </div>
 
-        <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
+        <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
               <motion.div 
                 key={i} 
-                className="group relative bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[40px] overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
+                className="group relative bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[40px] overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
