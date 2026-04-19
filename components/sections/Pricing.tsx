@@ -71,7 +71,7 @@ export default function Pricing() {
           {plans.map((plan, i) => (
             <div 
               key={i} 
-              className={`bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] ${i === 1 ? 'border-[2px] border-[#8B5CF6]' : ''} rounded-[24px] p-6 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-xl ${visible ? '' : 'opacity-0 translate-y-4'}`}
+              className={`${plan.dark ? 'bg-[#010309]/80 backdrop-blur-md border-[#0c111c]' : 'bg-white/80 backdrop-blur-md border-[#ebecef]'} ${i === 1 ? 'border-[2px] border-[#8B5CF6]' : 'border'} rounded-[24px] p-6 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-xl ${visible ? '' : 'opacity-0 translate-y-4'}`}
               style={{ transitionDelay: `${i * 0.15}s` }}
             >
               {plan.name === 'Custom' && (
