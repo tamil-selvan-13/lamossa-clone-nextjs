@@ -64,7 +64,7 @@ export default function Button({
 }: ButtonProps) {
   // For gradient variant, override showArrow to false unless explicitly set to true
   const shouldShowArrow = variant === 'gradient' ? false : showArrow;
-  
+
   const baseStyles = `inline-flex items-center justify-center font-medium transition-all duration-200 rounded-full gap-0`;
   const btnClass = `${baseStyles} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
   const hoverClass = variantHoverClasses[variant];
@@ -85,8 +85,8 @@ export default function Button({
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="flex items-center justify-center flex-shrink-0"
-          style={{ 
-            background: arrowBg, 
+          style={{
+            background: arrowBg,
             borderLeft: `1px solid ${arrowBorder}`,
             height: `${arrowHeight}px`,
             width: `${arrowHeight}px`,
@@ -97,7 +97,7 @@ export default function Button({
             whileTap={{ rotate: 0 }}
             width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={arrowStroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
           >
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+            <path d="M5 12h14M12 5l7 7-7 7" />
           </motion.svg>
         </motion.span>
       )}
@@ -133,8 +133,8 @@ export default function Button({
         </motion.a>
       );
     }
-  // Internal link using next/link wrapped with motion
-  const MotionLink = motion.create(Link);
+    // Internal link using next/link wrapped with motion
+    const MotionLink = motion.create(Link);
     // Handle gradient variant for internal links
     if (variant === 'gradient') {
       return (

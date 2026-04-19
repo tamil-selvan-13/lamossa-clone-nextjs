@@ -45,12 +45,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="section-hero" 
+      id="section-hero"
       className="relative flex flex-col justify-center pt-[140px] pb-10 min-h-screen bg-white overflow-hidden"
     >
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(circle, #e5e7eb 1px, transparent 1px)',
@@ -61,7 +61,7 @@ export default function Hero() {
 
       <div className="max-w-[1100px] mx-auto px-6 relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
-          <div 
+          <div
             className="inline-flex items-center justify-center gap-2 px-4 py-1.5 mb-8 bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
@@ -72,31 +72,31 @@ export default function Hero() {
             Open for work
           </div>
 
-          <h1 
+          <h1
             className="text-[72px] font-semibold text-[#171717] leading-[1.05] tracking-tight max-w-[900px] mx-auto"
             style={{ fontFamily: 'Satoshi, sans-serif', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.1s' }}
           >
             Web & Brand Design For Ambitious Founders
           </h1>
 
-          <p 
+          <p
             className="text-lg text-[#404040] mt-8 mb-8 max-w-[480px] w-full mx-auto leading-relaxed"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.2s' }}
           >
             We build conversion-driven websites and marketing that attract, engage, and convert.
           </p>
 
-          <div 
+          <div
             className="flex flex-row justify-center items-center gap-8 mb-8"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.3s' }}
           >
-            <Link 
+            <Link
               href="/contact-us"
               className="inline-flex items-center justify-center gap-2 bg-[#000000] text-white rounded-full px-8 py-4 font-semibold transition hover:-translate-y-1 shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
             >
               Book A Call
             </Link>
-            <Link 
+            <Link
               href="/projects"
               className="inline-flex items-center justify-center bg-[#F9FAFB] text-[#111827] border border-[#E5E7EB] rounded-full px-8 py-4 font-semibold transition hover:bg-gray-50"
             >
