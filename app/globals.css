@@ -63,15 +63,15 @@
   }
    
   .card {
-    @apply bg-white border border-[#ebecef] rounded-[32px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
+    @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
   }
    
   .card-lg {
-    @apply bg-white border border-[#ebecef] rounded-[40px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
+    @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[40px] shadow-[0_4px_24px_rgba(0,0,0,0.02)];
   }
    
   .card-xl {
-    @apply bg-white border border-[#ebecef] rounded-[64px] p-6 shadow-[0_4px_32px_rgba(0,0,0,0.03)];
+    @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6 shadow-[0_4px_32px_rgba(0,0,0,0.03)];
   }
   
   .btn-primary {
@@ -183,10 +183,7 @@
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.08];
 }
 
 .text-gradient {

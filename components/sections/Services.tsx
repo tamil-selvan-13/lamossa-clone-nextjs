@@ -63,7 +63,7 @@ export default function Services() {
             {services.map((service, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div
-                  className={`bg-white border border-[#ebecef] rounded-[32px] overflow-hidden transition-all duration-300 hover:shadow-md cursor-pointer ${openIndex === i ? 'shadow-md' : ''}`}
+                  className={`bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] overflow-hidden transition-all duration-300 hover:shadow-md cursor-pointer ${openIndex === i ? 'shadow-md' : ''}`}
                 >
                   <button
                     className="w-full flex items-center gap-4 p-5 text-left"
@@ -100,7 +100,7 @@ export default function Services() {
 
           <FadeIn delay={0.4}>
             <div className="hidden lg:block relative sticky top-24">
-              <div className="bg-white border border-[#ebecef] rounded-[32px] p-4 shadow-lg">
+              <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-4 shadow-lg">
                 <div className="aspect-[5/4] relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-[24px] overflow-hidden group">
                   <Image 
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=640&fit=crop"

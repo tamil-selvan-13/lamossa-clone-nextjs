@@ -41,7 +41,7 @@ export default function Stats() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="bg-white border border-[#ebecef] rounded-[32px] p-6 transition-all duration-700 ease-out hover:shadow-lg hover:scale-[1.02]"
+              className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-6 transition-all duration-700 ease-out hover:shadow-lg hover:scale-[1.02]"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? 'translateY(0)' : 'translateY(24px)',

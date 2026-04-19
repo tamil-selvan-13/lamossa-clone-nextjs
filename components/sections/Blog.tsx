@@ -47,9 +47,9 @@ export default function Blog() {
           </p>
         </FadeIn>
 
-        <div className="bg-white border border-[#ebecef] rounded-[64px] p-6">
+        <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white border border-[#ebecef] rounded-[32px] overflow-hidden group">
+            <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] overflow-hidden group">
               <div className="aspect-[5/4] relative bg-gray-100">
                 <Image 
                   src={posts[0].image}
@@ -90,7 +90,7 @@ export default function Blog() {
 
             <div className="space-y-6">
               {posts.slice(1).map((post, i) => (
-                <div key={i} className="bg-white border border-[#ebecef] rounded-[32px] p-4 flex gap-4 group">
+                <div key={i} className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-4 flex gap-4 group">
                   <div className="w-[30%] aspect-square relative bg-gray-100 rounded-2xl overflow-hidden">
                     <Image 
                       src={post.image}

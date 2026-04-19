@@ -39,12 +39,12 @@ export default function Projects() {
           </h2>
         </div>
 
-        <div className="bg-white border border-[#ebecef] rounded-[64px] p-6">
+        <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
               <motion.div 
                 key={i} 
-                className="group relative bg-white border border-[#ebecef]/50 rounded-[40px] overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
+                className="group relative bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[40px] overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}

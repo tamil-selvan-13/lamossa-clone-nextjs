@@ -131,7 +131,7 @@ export default function Hero() {
           {leftQuotes.map((q, i) => (
             <div
               key={i}
-              className="absolute bg-white border border-[#ebecef] rounded-[22px] p-5 w-[220px] text-sm"
+              className="absolute bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[22px] p-5 w-[220px] text-sm"
               style={{
                 transform: `rotate(${leftRotations[i]}deg)`,
                 top: `${i * 165}px`,
@@ -150,7 +150,7 @@ export default function Hero() {
           {rightQuotes.map((q, i) => (
             <div
               key={i}
-              className="absolute bg-white border border-[#ebecef] rounded-[22px] p-5 w-[220px] text-sm"
+              className="absolute bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[22px] p-5 w-[220px] text-sm"
               style={{
                 transform: `rotate(${rightRotations[i]}deg)`,
                 top: `${i * 165}px`,

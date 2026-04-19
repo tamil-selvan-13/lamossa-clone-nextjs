@@ -47,12 +47,12 @@ export default function Testimonials() {
           </motion.div>
         </div>
 
-        <div className="bg-white border border-[#ebecef] rounded-[64px] p-6">
+        <div className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="glass-effect border border-[#ebecef] rounded-[40px] p-6"
+                className="glass-effect rounded-[40px] p-8"
                 style={{
                   opacity: visible ? 1 : 0,
                   transform: visible ? 'translateY(0)' : 'translateY(20px)',
