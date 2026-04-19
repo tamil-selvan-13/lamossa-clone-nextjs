@@ -45,17 +45,24 @@ export default function Hero() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="section-hero" 
-      className="relative flex flex-col justify-center pt-[140px] pb-10 min-h-screen bg-[#090909] overflow-hidden"
+      id="section-hero"
+      className="relative flex flex-col justify-center pt-[140px] pb-10 min-h-screen bg-white overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1),transparent)]" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #e5e7eb 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+          opacity: '0.5'
+        }}
+      />
 
       <div className="max-w-[1136px] mx-auto px-8 relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
-          <div 
-            className="inline-flex items-center justify-center gap-2 px-4 py-1.5 mb-[24px] bg-white/5 text-white border border-white/10 rounded-full text-[14px] font-semibold"
+          <div
+            className="inline-flex items-center justify-center gap-2 px-4 py-1.5 mb-[24px] bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
             <div className="relative flex items-center justify-center w-2 h-2">
@@ -65,39 +72,42 @@ export default function Hero() {
             Open for work
           </div>
 
-          <h1 
-            className="text-[64px] font-semibold text-white leading-[1.1] max-w-[800px] tracking-tight mx-auto"
+          <h1
+            className="text-[48px] md:text-[64px] font-bold tracking-[-2px] text-[#171717] leading-[1.1] max-w-4xl"
             style={{ fontFamily: 'Satoshi, sans-serif', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.1s' }}
           >
             Web & Brand Design For Ambitious Founders
           </h1>
 
-          <p 
-            className="text-[18px] text-white/70 mt-[32px] mb-[32px] max-w-[500px] w-full mx-auto"
+          <p
+            className="text-lg text-[#404040] mt-[32px] mb-[32px] max-w-[600px] w-full"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.2s' }}
           >
             We build conversion-driven websites and marketing that attract, engage, and convert.
           </p>
 
-          <div 
+          <div
             className="flex flex-row justify-center items-center gap-[16px] mb-8"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.3s' }}
           >
-            <Link 
+            <Link
               href="/contact-us"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#e1443a] to-[#ff5e55] text-white rounded-full px-6 py-3 font-semibold transition hover:-translate-y-1 shadow-[0_20px_40px_rgba(225,68,58,0.3)]"
+              className="inline-flex items-center justify-center gap-2 bg-[#000000] text-white rounded-full py-[16px] px-[32px] font-semibold transition hover:-translate-y-1 shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
             >
               Book A Call
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </Link>
-            <Link 
+            <Link
               href="/projects"
-              className="inline-flex items-center justify-center text-white border border-white/20 rounded-full px-6 py-3 font-semibold transition hover:bg-white/10"
+              className="inline-flex items-center justify-center bg-[#F9FAFB] text-[#111827] rounded-full py-[16px] px-[32px] font-semibold transition hover:bg-gray-100"
             >
               View Projects
             </Link>
           </div>
 
-          <div 
+          <div
             className="flex items-center justify-center gap-3"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.4s' }}
           >
@@ -111,7 +121,7 @@ export default function Hero() {
             <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
                 <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#161d27">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               ))}
             </div>
