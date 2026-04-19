@@ -30,8 +30,8 @@ export default function Projects() {
   }, []);
 
   return (
-    <FadeIn className="py-20 bg-[#F9F9F9]">
-      <div className="max-w-[1136px] mx-auto px-8" ref={ref}>
+    <FadeIn className="py-28 bg-[#F9F9F9]">
+      <div className="max-w-[1100px] mx-auto px-6" ref={ref}>
         <div className="flex flex-col items-start mb-12">
           <SectionTag text="PROJECTS" color="#FF4D4D" />
           <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1]">

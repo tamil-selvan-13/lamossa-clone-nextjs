@@ -28,8 +28,8 @@ export default function Services() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="section-services" className="py-20 bg-[#F9F9F9]">
-      <div className="max-w-[1136px] mx-auto px-8">
+    <section id="section-services" className="py-28 bg-[#F9F9F9]">
+      <div className="max-w-[1100px] mx-auto px-6">
         
         <FadeIn>
           <div className="flex flex-col md:flex-row justify-between items-end mb-[64px] gap-8">

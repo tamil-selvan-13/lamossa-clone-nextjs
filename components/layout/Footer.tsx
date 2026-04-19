@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-white">
-      <div className="max-w-[1136px] mx-auto px-8 pb-8">
+      <div className="max-w-[1100px] mx-auto px-6 pb-8">
         <div className="bg-white border border-[#ebecef] rounded-[48px] p-8 md:p-12 mb-8">
           <div className="text-center mb-8">
             <h2 className="text-[40px] font-bold mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>
@@ -17,10 +17,10 @@ export default function Footer() {
               <br />
               <span className="text-[#5d636f] font-normal">Turning ideas into bold brands.</span>
             </h2>
-            <p className="text-base text-[#404040] mb-6 max-w-lg mx-auto">
+            <p className="text-base text-[#404040] mb-8 max-w-lg mx-auto">
               Book a free discovery call to discuss strategy, set goals, and see how we can help you grow.
             </p>
-            <Link href="/contact-us" className="inline-flex items-center gap-2 bg-white border border-[#ebecef] rounded-full px-4 py-2 mb-6">
+            <Link href="/contact-us" className="inline-flex items-center gap-2 bg-white border border-[#ebecef] rounded-full px-4 py-2 mb-8">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-sm">Open for work</span>
             </Link>

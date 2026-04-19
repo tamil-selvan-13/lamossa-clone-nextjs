@@ -24,9 +24,9 @@ export default function Stats() {
   }, []);
 
   return (
-    <section id="section-stats" className="py-20 bg-[#F9F9F9]" ref={ref}>
-      <div className="max-w-[1136px] mx-auto px-8">
-        <div className="flex items-center gap-2 justify-center mb-6">
+    <section id="section-stats" className="py-28 bg-[#F9F9F9]" ref={ref}>
+      <div className="max-w-[1100px] mx-auto px-6">
+        <div className="flex items-center gap-2 justify-center mb-8">
           <span className="w-2 h-2 bg-[#e1443a] rounded-sm" />
           <span className="text-base text-[#404040]">Impact</span>
         </div>
@@ -37,7 +37,7 @@ export default function Stats() {
           <span className="text-[#5d636f]">and delivers results.</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stats.map((stat, i) => (
             <div
               key={i}

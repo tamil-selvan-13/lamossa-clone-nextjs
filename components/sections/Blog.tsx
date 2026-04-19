@@ -35,11 +35,11 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="section-blogs" className="py-20 pb-12 bg-[#F9F9F9]">
-      <div className="max-w-[1136px] mx-auto px-8">
+    <section id="section-blogs" className="py-28 pb-12 bg-[#F9F9F9]">
+      <div className="max-w-[1100px] mx-auto px-6">
         <FadeIn className="flex flex-col items-start mb-12">
           <SectionTag text="OUR BLOG" color="#10B981" />
-          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-6">
+          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-8">
             Fresh insights & ideas.
           </h2>
           <p className="text-[18px] text-[#6B7280] max-w-[600px]">
@@ -48,7 +48,7 @@ export default function Blog() {
         </FadeIn>
 
         <div className="bg-white border border-[#ebecef] rounded-[64px] p-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white border border-[#ebecef] rounded-[32px] overflow-hidden group">
               <div className="aspect-[5/4] relative bg-gray-100">
                 <Image 
@@ -122,7 +122,7 @@ export default function Blog() {
             </div>
           </div>
 
-          <div className="mt-6 text-center">
+          <div className="mt-8 text-center">
             <Button href="/blog" variant="light">Read More</Button>
           </div>
         </div>

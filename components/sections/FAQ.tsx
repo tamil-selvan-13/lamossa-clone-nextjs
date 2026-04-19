@@ -18,8 +18,8 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="section-faq" className="py-24 bg-[#F9F9F9]">
-      <div className="max-w-[800px] mx-auto px-8">
+    <section id="section-faq" className="py-28 bg-[#F9F9F9]">
+      <div className="max-w-[800px] mx-auto px-6">
         
         <FadeIn className="flex flex-col items-center text-center mb-16">
           <SectionTag text="GOT A QUESTION?" color="#3B82F6" />
@@ -44,7 +44,7 @@ export default function FAQ() {
                     <div className={`w-[14px] h-[2px] bg-[#171717] absolute transition-transform duration-300 ${openIndex === i ? 'rotate-0 opacity-0' : 'rotate-90 opacity-100'}`} />
                   </div>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-40 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-40 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}>
                   <p className="text-[16px] text-[#6b7280] leading-relaxed">
                     {faq.answer}
                   </p>

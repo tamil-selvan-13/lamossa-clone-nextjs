@@ -74,8 +74,8 @@ export default function Process() {
   });
 
   return (
-    <section id="section-process" className="py-24 bg-[#F9F9F9]">
-      <div className="max-w-[1136px] mx-auto px-8">
+    <section id="section-process" className="py-28 bg-[#F9F9F9]">
+      <div className="max-w-[1100px] mx-auto px-6">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
@@ -90,7 +90,7 @@ export default function Process() {
                 Proven & effective process.
               </h2>
 
-              <p className="text-lg text-[#404040] max-w-sm mt-6">
+              <p className="text-lg text-[#404040] max-w-sm mt-8">
                 We dive deep into your goals, audience, and challenges to craft a strategy that drives clear direction and impact.
               </p>
             </FadeIn>
@@ -106,7 +106,7 @@ export default function Process() {
                />
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-8">
               {steps.map((step, i) => (
                 <ProcessStep 
                   key={i} 

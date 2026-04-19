@@ -55,11 +55,11 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="section-pricing" className="py-20 bg-[#F9F9F9]" ref={ref}>
-      <div className="max-w-[1136px] mx-auto px-8">
+    <section id="section-pricing" className="py-28 bg-[#F9F9F9]" ref={ref}>
+      <div className="max-w-[1100px] mx-auto px-6">
         <FadeIn className="flex flex-col items-center text-center mb-16">
           <SectionTag text="CHOOSE A PLAN." color="#8B5CF6" />
-          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-6">
+          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-8">
             That fits your needs.
           </h2>
           <p className="text-[18px] text-[#6B7280] max-w-[600px]">
@@ -67,7 +67,7 @@ export default function Pricing() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, i) => (
             <div 
               key={i} 
@@ -89,7 +89,7 @@ export default function Pricing() {
                 <span className={plan.dark ? 'text-[#737373]' : 'text-[#737373]'}>{plan.period}</span>
               </div>
               
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-3 mb-8">
                 {plan.features.map((feat, j) => (
                   <li key={j} className={`flex items-center gap-2 text-sm ${plan.dark ? 'text-[#a3a3a3]' : 'text-[#404040]'}`}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={plan.dark ? '#a3a3a3' : '#404040'} strokeWidth="2">

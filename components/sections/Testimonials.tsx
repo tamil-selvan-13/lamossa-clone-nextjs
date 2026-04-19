@@ -27,8 +27,8 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <FadeIn className="py-20 bg-[#F9F9F9]">
-      <div className="max-w-[1136px] mx-auto px-8" ref={ref}>
+    <FadeIn className="py-28 bg-[#F9F9F9]">
+      <div className="max-w-[1100px] mx-auto px-6" ref={ref}>
         <div className="flex flex-col items-start mb-12">
           {/* Framer motion wrapper configured specifically for the requested 20px slide distance */}
           <motion.div
@@ -48,7 +48,7 @@ export default function Testimonials() {
         </div>
 
         <div className="bg-white border border-[#ebecef] rounded-[64px] p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
               <div
                 key={i}
@@ -78,8 +78,8 @@ export default function Testimonials() {
             ))}
           </div>
 
-          <div className="mt-6 bg-[#010309] border border-[#0c111c] rounded-[40px] p-6">
-            <div className="text-center mb-6">
+          <div className="mt-8 bg-[#010309] border border-[#0c111c] rounded-[40px] p-6">
+            <div className="text-center mb-8">
               <p className="text-3xl font-bold text-white mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                 You focus on your company.<br/>
                 <span className="text-[#737373]">We make it happen.</span>

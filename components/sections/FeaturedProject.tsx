@@ -11,8 +11,8 @@ const slides = [
 
 export default function FeaturedProject() {
   return (
-    <FadeIn className="py-20 bg-[#F9F9F9]">
-      <div className="max-w-[1136px] mx-auto px-8">
+    <FadeIn className="py-28 bg-[#F9F9F9]">
+      <div className="max-w-[1100px] mx-auto px-6">
         <div className="bg-white border border-[#ebecef] rounded-[64px] p-6">
           <div className="relative aspect-[16/9] bg-gray-100 rounded-[40px] overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

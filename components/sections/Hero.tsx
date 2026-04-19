@@ -59,10 +59,10 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-[1136px] mx-auto px-8 relative z-10 w-full">
+      <div className="max-w-[1100px] mx-auto px-6 relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
           <div
-            className="inline-flex items-center justify-center gap-2 px-4 py-1.5 mb-[24px] bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold"
+            className="inline-flex items-center justify-center gap-2 px-4 py-1.5 mb-8 bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
             <div className="relative flex items-center justify-center w-2 h-2">
@@ -80,14 +80,14 @@ export default function Hero() {
           </h1>
 
           <p
-            className="text-lg text-[#404040] mt-[32px] mb-[32px] max-w-[600px] w-full"
+            className="text-lg text-[#404040] mt-8 mb-8 max-w-[600px] w-full"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.2s' }}
           >
             We build conversion-driven websites and marketing that attract, engage, and convert.
           </p>
 
           <div
-            className="flex flex-row justify-center items-center gap-[16px] mb-8"
+            className="flex flex-row justify-center items-center gap-8 mb-8"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.3s' }}
           >
             <Link
