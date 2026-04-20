@@ -56,7 +56,7 @@ export default function Hero() {
         {/* Base Background Layer */}
         <div className="absolute inset-0 bg-white" />
         {/* Pattern Layer */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: 'url("https://framerusercontent.com/images/jIzgWv1ngkkV3oGhfkZy0ymiHU.png?width=114&height=114")',
@@ -76,9 +76,9 @@ export default function Hero() {
           >
             <div className="relative flex items-center justify-center w-[12px] h-[12px]">
               <div className="absolute inset-0 rounded-full bg-[#16A34A] opacity-20 animate-ping" />
-              <div className="relative w-[8px] h-[8px] rounded-full bg-[#16A34A] transform scale-[0.87]" />
+              <div className="relative w-[8px] h-[8px] rounded-full bg-[#16A34A]" />
             </div>
-            Open fo Work
+            Open for Work
           </div>
 
           <motion.h1
@@ -86,7 +86,7 @@ export default function Hero() {
             animate={isVisible ? "visible" : "hidden"}
             variants={{
               hidden: { opacity: 0 },
-              visible: { 
+              visible: {
                 opacity: 1,
                 transition: { staggerChildren: 0.05, delayChildren: 0.1 }
               }
@@ -113,7 +113,7 @@ export default function Hero() {
             animate={isVisible ? "visible" : "hidden"}
             variants={{
               hidden: { opacity: 0 },
-              visible: { 
+              visible: {
                 opacity: 1,
                 transition: { staggerChildren: 0.02, delayChildren: 0.3 }
               }
@@ -141,7 +141,7 @@ export default function Hero() {
             <Button href="/contact-us" variant="dark" showArrow>
               Book A Call
             </Button>
-            <Button href="/projects" variant="secondary" className="bg-white border-[#EBECEF] hover:bg-gray-50 shadow-[0_4px_12px_rgba(63,63,70,0.1)]">
+            <Button href="/projects" variant="secondary" className="shadow-[0_4px_12px_rgba(63,63,70,0.1)]">
               View Projects
             </Button>
           </div>

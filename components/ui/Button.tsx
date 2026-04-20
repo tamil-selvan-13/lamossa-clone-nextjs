@@ -19,7 +19,7 @@ interface ButtonProps {
 
 const variantClasses = {
   primary: 'bg-white text-black shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-black/5',
-  secondary: 'bg-transparent text-black border border-black/10 hover:bg-black/[0.03]',
+  secondary: 'bg-white text-black border border-[#EBECEF] hover:bg-[#F9F9F9]',
   dark: 'bg-[#030712] text-white shadow-[0_4px_16px_-6px_rgba(66,75,87,0.2),0_10px_60px_-5px_rgba(41,49,61,0.2),0_60px_100px_-10px_rgba(41,49,61,0.1)]',
   light: 'bg-white text-black border border-black/10 shadow-sm',
   outline: 'bg-transparent text-white border border-white/10 hover:bg-white/5',
