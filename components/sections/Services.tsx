@@ -30,17 +30,17 @@ export default function Services() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="section-services" className="py-[120px] bg-[#F9F9F9]">
-      <div className="max-w-[1120px] mx-auto px-[24px]">
+    <section id="section-services" className="py-[160px] bg-[#F9F9F9]">
+      <div className="max-w-[1240px] mx-auto px-[24px]">
         
         <FadeIn>
-          <div className="flex flex-col md:flex-row justify-between items-end mb-[64px] gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-[80px] gap-8">
             <div className="flex flex-col">
               <div className="mb-[16px]">
                 <SectionLabel label="Services" />
               </div>
               
-              <h1 className="text-[40px] font-bold tracking-[-0.05em] text-[#000000] font-sans max-w-[600px] leading-[1.1]">
+              <h1 className="text-[56px] font-bold tracking-[-0.05em] text-[#000000] font-sans max-w-[700px] leading-[1.05]">
                 From idea to scale. We master our craft.
               </h1>
             </div>

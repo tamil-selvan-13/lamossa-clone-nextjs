@@ -30,11 +30,11 @@ export default function Projects() {
   }, []);
 
   return (
-    <FadeIn className="py-[120px] bg-[#F9F9F9]">
-      <div className="max-w-[1120px] mx-auto px-[24px]" ref={ref}>
-        <div className="flex flex-col items-center mb-12">
+    <FadeIn className="py-[160px] bg-[#F9F9F9]">
+      <div className="max-w-[1240px] mx-auto px-[24px]" ref={ref}>
+        <div className="flex flex-col items-center mb-16">
           <SectionLabel label="PROJECTS" />
-          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] text-center mt-4">
+          <h2 className="text-[72px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] text-center mt-4 max-w-[900px]">
             Here's what the momentum looks like.
           </h2>
         </div>

@@ -80,11 +80,11 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="section-pricing" className="py-[120px] bg-white" ref={ref}>
-      <div className="max-w-[1120px] mx-auto px-[24px]">
-        <FadeIn className="flex flex-col items-center text-center mb-16">
+    <section id="section-pricing" className="py-[160px] bg-white" ref={ref}>
+      <div className="max-w-[1240px] mx-auto px-[24px]">
+        <FadeIn className="flex flex-col items-center text-center mb-20">
           <SectionLabel label="PRICING" />
-          <h2 className="text-[56px] font-bold tracking-[-0.04em] text-black leading-[1.1] mb-4 mt-4">
+          <h2 className="text-[72px] font-bold tracking-[-0.05em] text-black leading-[1.05] mb-4 mt-4">
             Choose a plan.
           </h2>
           <p className="text-[18px] text-black/60 max-w-[600px] mx-auto leading-relaxed">

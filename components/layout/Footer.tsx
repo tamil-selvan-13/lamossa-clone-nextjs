@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-white">
-      <div className="max-w-[1120px] mx-auto px-[24px] pb-8">
+      <div className="max-w-[1240px] mx-auto px-[24px] pb-8">
         <div className="bg-white border border-[#ebecef] rounded-[48px] p-8 md:p-12 mb-8">
           <div className="text-center mb-8">
             <h2 className="text-[40px] font-bold mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>

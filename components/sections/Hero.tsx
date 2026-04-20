@@ -48,7 +48,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="section-hero"
-      className="relative flex flex-col justify-center pt-[140px] pb-10 min-h-screen bg-white overflow-hidden"
+      className="relative flex flex-col justify-center pt-[180px] pb-[120px] min-h-[90vh] bg-white overflow-hidden"
     >
       <div
         className="absolute inset-0 pointer-events-none"
@@ -59,10 +59,10 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-[1120px] mx-auto px-[24px] relative z-10 w-full">
+      <div className="max-w-[1240px] mx-auto px-[24px] relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
           <div
-            className="inline-flex items-center justify-center gap-[8px] px-[16px] py-[6px] mb-[32px] bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold border border-black/[0.03]"
+            className="inline-flex items-center justify-center gap-[8px] px-[16px] py-[6px] mb-[40px] bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold border border-black/[0.03]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
             <div className="relative flex items-center justify-center w-[8px] h-[8px]">
@@ -71,9 +71,9 @@ export default function Hero() {
             </div>
             Open for work
           </div>
-
+ 
           <h1
-            className="text-[68px] font-semibold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[850px] mx-auto"
+            className="text-[90px] font-bold text-[#171717] leading-[1.05] tracking-[-0.05em] max-w-[1000px] mx-auto"
             style={{ fontFamily: 'Satoshi, sans-serif', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.1s' }}
           >
             Web & Brand Design For Ambitious Founders

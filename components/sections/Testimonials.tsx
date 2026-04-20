@@ -27,9 +27,9 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <FadeIn className="py-[120px] bg-[#F9F9F9]">
-      <div className="max-w-[1120px] mx-auto px-[24px]" ref={ref}>
-        <div className="flex flex-col items-start mb-12">
+    <FadeIn className="py-[160px] bg-[#F9F9F9]">
+      <div className="max-w-[1240px] mx-auto px-[24px]" ref={ref}>
+        <div className="flex flex-col items-start mb-16">
           {/* Framer motion wrapper configured specifically for the requested 20px slide distance */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function Testimonials() {
             <SectionLabel label="TESTIMONIALS" />
             
             {/* The Main Title */}
-            <h1 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] max-w-[800px]">
+            <h1 className="text-[72px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] max-w-[900px] mt-4">
               We're loved. Just success stories.
             </h1>
           </motion.div>

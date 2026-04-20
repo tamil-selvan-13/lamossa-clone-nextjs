@@ -35,14 +35,14 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="section-blogs" className="py-[120px] pb-12 bg-[#F9F9F9]">
-      <div className="max-w-[1120px] mx-auto px-[24px]">
-        <FadeIn className="flex flex-col items-start mb-12">
+    <section id="section-blogs" className="py-[160px] pb-12 bg-[#F9F9F9]">
+      <div className="max-w-[1240px] mx-auto px-[24px]">
+        <FadeIn className="flex flex-col items-start mb-16">
           <SectionLabel label="OUR BLOG" />
-          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-8">
+          <h2 className="text-[72px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] mb-8 mt-4">
             Fresh insights & ideas.
           </h2>
-          <p className="text-[18px] text-[#6B7280] max-w-[600px]">
+          <p className="text-[18px] text-[#6B7280] max-w-[700px]">
             Expert tips, case studies, and trends to help you design, grow, and convert smarter.
           </p>
         </FadeIn>
