@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Button from '../ui/Button';
 import CTAButton from '../ui/CTAButton';
@@ -80,19 +81,58 @@ export default function Hero() {
             Open for Work
           </div>
 
-          <h1
+          <motion.h1
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { 
+                opacity: 1,
+                transition: { staggerChildren: 0.05, delayChildren: 0.1 }
+              }
+            }}
             className="text-[64px] font-bold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[780px] mx-auto"
-            style={{ fontFamily: 'Satoshi, sans-serif', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.1s' }}
+            style={{ fontFamily: 'Satoshi, sans-serif' }}
           >
-            Web & Brand Design For Ambitious Founders
-          </h1>
+            {"Web & Brand Design For Ambitious Founders".split(' ').map((word, i) => (
+              <motion.span
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] } }
+                }}
+                className="inline-block mr-[0.2em]"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </motion.h1>
 
-          <p
+          <motion.p
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { 
+                opacity: 1,
+                transition: { staggerChildren: 0.02, delayChildren: 0.3 }
+              }
+            }}
             className="text-[15px] text-[#404040] mt-[20px] mb-[32px] max-w-[450px] w-full mx-auto leading-[1.6]"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.2s' }}
           >
-            We build conversion-driven websites and marketing that attract, engage, and convert.
-          </p>
+            {"We build conversion-driven websites and marketing that attract, engage, and convert.".split(' ').map((word, i) => (
+              <motion.span
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
+                }}
+                className="inline-block mr-[0.25em]"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </motion.p>
 
           <div
             className="flex flex-row justify-center items-center gap-[14px] mb-[48px]"
