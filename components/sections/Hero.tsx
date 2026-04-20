@@ -73,9 +73,9 @@ export default function Hero() {
             className="inline-flex items-center justify-center gap-[10px] px-[14px] py-[6px] mb-[40px] bg-white text-[#171717] rounded-full text-[14px] font-bold border border-black/[0.08] shadow-[0_4px_16px_-6px_rgba(66,75,87,0.2),0_2px_1px_-0.625px_rgba(41,49,61,0.1)]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
-            <div className="relative flex items-center justify-center w-[10px] h-[10px]">
-              <div className="absolute inline-flex w-full h-full rounded-full bg-[#16A34A] opacity-30 animate-pulse"></div>
-              <div className="relative inline-flex rounded-full w-[8px] h-[8px] bg-[#16A34A]"></div>
+            <div className="relative flex items-center justify-center w-[12px] h-[12px]">
+              <div className="absolute inset-0 rounded-full bg-[#16A34A] opacity-20 animate-ping" />
+              <div className="relative w-[8px] h-[8px] rounded-full bg-[#16A34A]" />
             </div>
             Open for Work
           </div>
@@ -125,7 +125,7 @@ export default function Hero() {
                   </svg>
                 ))}
               </div>
-              <span className="text-[14px] font-bold text-[#0c111c] tracking-tight">From 150+ reviews</span>
+              <span className="text-[13.5px] font-bold text-[#0c111c] tracking-tight">From 150+ reviews</span>
             </div>
           </div>
         </div>
