@@ -41,7 +41,7 @@ export default function Testimonials() {
             <SectionLabel label="TESTIMONIALS" />
             
             {/* The Main Title */}
-            <h1 className="text-[72px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] max-w-[900px] mt-4">
+            <h1 className="text-[60px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] max-w-[800px] mt-4">
               We're loved. Just success stories.
             </h1>
           </motion.div>

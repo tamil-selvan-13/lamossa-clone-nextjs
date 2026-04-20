@@ -39,7 +39,7 @@ export default function Blog() {
       <div className="max-w-[1240px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-start mb-16">
           <SectionLabel label="OUR BLOG" />
-          <h2 className="text-[72px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] mb-8 mt-4">
+          <h2 className="text-[60px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] mb-8 mt-4">
             Fresh insights & ideas.
           </h2>
           <p className="text-[18px] text-[#6B7280] max-w-[700px]">

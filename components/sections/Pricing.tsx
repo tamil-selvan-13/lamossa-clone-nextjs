@@ -84,7 +84,7 @@ export default function Pricing() {
       <div className="max-w-[1240px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-center text-center mb-20">
           <SectionLabel label="PRICING" />
-          <h2 className="text-[72px] font-bold tracking-[-0.05em] text-black leading-[1.05] mb-4 mt-4">
+          <h2 className="text-[60px] font-bold tracking-[-0.05em] text-black leading-[1.05] mb-4 mt-4">
             Choose a plan.
           </h2>
           <p className="text-[18px] text-black/60 max-w-[600px] mx-auto leading-relaxed">

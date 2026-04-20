@@ -73,14 +73,14 @@ export default function Hero() {
           </div>
  
           <h1
-            className="text-[72px] font-bold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[850px] mx-auto"
+            className="text-[64px] font-bold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[780px] mx-auto"
             style={{ fontFamily: 'Satoshi, sans-serif', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.1s' }}
           >
             Web & Brand Design For Ambitious Founders
           </h1>
 
           <p
-            className="text-[16px] text-[#404040] mt-[24px] mb-[32px] max-w-[480px] w-full mx-auto leading-[1.6]"
+            className="text-[15px] text-[#404040] mt-[20px] mb-[32px] max-w-[450px] w-full mx-auto leading-[1.6]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.2s' }}
           >
             We build conversion-driven websites and marketing that attract, engage, and convert.

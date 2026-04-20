@@ -34,7 +34,7 @@ export default function Projects() {
       <div className="max-w-[1240px] mx-auto px-[24px]" ref={ref}>
         <div className="flex flex-col items-center mb-16">
           <SectionLabel label="PROJECTS" />
-          <h2 className="text-[72px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] text-center mt-4 max-w-[900px]">
+          <h2 className="text-[60px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] text-center mt-4 max-w-[800px]">
             Here's what the momentum looks like.
           </h2>
         </div>
