@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Button from '../ui/Button';
 import FadeIn from '../ui/FadeIn';
-import SectionTag from '../ui/SectionTag';
+import SectionLabel from '../ui/SectionLabel';
 
 const faqs = [
   { question: 'What is included with each Framer template?', answer: 'Each template comes with a fully responsive design, editable components, and SEO-friendly structure ready to customize.' },
@@ -22,7 +22,7 @@ export default function FAQ() {
       <div className="max-w-[800px] mx-auto px-6">
         
         <FadeIn className="flex flex-col items-center text-center mb-16">
-          <SectionTag text="GOT A QUESTION?" color="#3B82F6" />
+          <SectionLabel label="FAQ" />
           <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1]">
             We've got answers.
           </h2>

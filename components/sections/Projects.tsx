@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import FadeIn from '../ui/FadeIn';
-import SectionTag from '../ui/SectionTag';
+import SectionLabel from '../ui/SectionLabel';
 
 const projects = [
   { name: 'Atlas Technologies', badges: ['UX Design', 'Web Design'], href: '/projects/redesigning-atlas', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop' },
@@ -32,9 +32,9 @@ export default function Projects() {
   return (
     <FadeIn className="py-[120px] bg-[#F9F9F9]">
       <div className="max-w-[1120px] mx-auto px-[24px]" ref={ref}>
-        <div className="flex flex-col items-start mb-12">
-          <SectionTag text="PROJECTS" color="#FF4D4D" />
-          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1]">
+        <div className="flex flex-col items-center mb-12">
+          <SectionLabel label="PROJECTS" />
+          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] text-center mt-4">
             Here's what the momentum looks like.
           </h2>
         </div>

@@ -45,12 +45,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="section-hero" 
+      id="section-hero"
       className="relative flex flex-col justify-center pt-[140px] pb-10 min-h-screen bg-white overflow-hidden"
     >
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(circle, #e5e7eb 1px, transparent 1px)',
@@ -61,7 +61,7 @@ export default function Hero() {
 
       <div className="max-w-[1120px] mx-auto px-[24px] relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
-          <div 
+          <div
             className="inline-flex items-center justify-center gap-[8px] px-[16px] py-[6px] mb-[32px] bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold border border-black/[0.03]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
@@ -72,21 +72,21 @@ export default function Hero() {
             Open for work
           </div>
 
-          <h1 
+          <h1
             className="text-[68px] font-semibold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[850px] mx-auto"
             style={{ fontFamily: 'Satoshi, sans-serif', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.1s' }}
           >
             Web & Brand Design For Ambitious Founders
           </h1>
 
-          <p 
+          <p
             className="text-[18px] text-[#404040] mt-[32px] mb-[32px] max-w-[480px] w-full mx-auto leading-[1.6]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.2s' }}
           >
             We build conversion-driven websites and marketing that attract, engage, and convert.
           </p>
 
-          <div 
+          <div
             className="flex flex-row justify-center items-center gap-[14px] mb-[48px]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.3s' }}
           >

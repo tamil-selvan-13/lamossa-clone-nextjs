@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Button from '../ui/Button';
 import FadeIn from '../ui/FadeIn';
-import SectionTag from '../ui/SectionTag';
+import SectionLabel from '../ui/SectionLabel';
 
 const posts = [
   { 
@@ -38,7 +38,7 @@ export default function Blog() {
     <section id="section-blogs" className="py-[120px] pb-12 bg-[#F9F9F9]">
       <div className="max-w-[1120px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-start mb-12">
-          <SectionTag text="OUR BLOG" color="#10B981" />
+          <SectionLabel label="OUR BLOG" />
           <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-8">
             Fresh insights & ideas.
           </h2>

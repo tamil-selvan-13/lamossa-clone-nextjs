@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Button from '../ui/Button';
 import FadeIn from '../ui/FadeIn';
-import SectionTag from '../ui/SectionTag';
+import SectionLabel from '../ui/SectionLabel';
 
 const plans = [
   {
@@ -58,7 +58,7 @@ export default function Pricing() {
     <section id="section-pricing" className="py-[120px] bg-[#F9F9F9]" ref={ref}>
       <div className="max-w-[1120px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-center text-center mb-16">
-          <SectionTag text="CHOOSE A PLAN." color="#8B5CF6" />
+          <SectionLabel label="PRICING" />
           <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] mb-8">
             That fits your needs.
           </h2>

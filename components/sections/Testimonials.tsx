@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Button from '../ui/Button';
 import FadeIn from '../ui/FadeIn';
 import { motion } from 'framer-motion';
-import SectionTag from '../ui/SectionTag';
+import SectionLabel from '../ui/SectionLabel';
 
 const testimonials = [
   { stat: '2.3×', subtitle: 'increase in lead conversion', quote: 'Lamosa completely redefined our digital presence. Their strategic design approach and attention to user behavior boosted our conversion rate significantly.', name: 'Sarah Coleman', role: 'CMO', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face' },
@@ -38,7 +38,7 @@ export default function Testimonials() {
             transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           >
             {/* The Tag */}
-            <SectionTag text="TESTIMONIALS" color="#FF4D4D" />
+            <SectionLabel label="TESTIMONIALS" />
             
             {/* The Main Title */}
             <h1 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1] max-w-[800px]">

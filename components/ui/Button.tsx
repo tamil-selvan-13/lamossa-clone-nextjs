@@ -37,7 +37,7 @@ export default function Button({
   className = '',
   disabled = false,
 }: ButtonProps) {
-  
+
   const baseStyles = 'inline-flex items-center justify-center px-[26px] py-[11px] text-[14.5px] font-medium rounded-[999px] transition-all duration-[350ms] ease-out select-none cursor-pointer';
   const btnClass = `${baseStyles} ${variantClasses[variant]} ${className}`;
 
@@ -51,7 +51,7 @@ export default function Button({
       {children}
       {showArrow && (
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
+          <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       )}
     </span>
