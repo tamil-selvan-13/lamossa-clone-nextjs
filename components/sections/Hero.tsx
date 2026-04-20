@@ -48,18 +48,24 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="section-hero"
-      className="relative flex flex-col justify-center pt-[180px] pb-[120px] min-h-[90vh] bg-white overflow-hidden"
+      className="relative flex flex-col justify-center pt-[180px] pb-[120px] min-h-[90vh] overflow-hidden"
     >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'url("https://framerusercontent.com/images/jIzgWv1ngkkV3oGhfkZy0ymiHU.png?width=114&height=114")',
-          backgroundRepeat: 'repeat',
-          backgroundPosition: 'center top',
-          backgroundSize: '32px',
-          opacity: '0.4'
-        }}
-      />
+      {/* Background Layer Container */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Base Background Layer */}
+        <div className="absolute inset-0 bg-white" />
+        {/* Pattern Layer */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("https://framerusercontent.com/images/jIzgWv1ngkkV3oGhfkZy0ymiHU.png?width=114&height=114")',
+            backgroundRepeat: 'repeat',
+            backgroundPosition: 'center top',
+            backgroundSize: '32px',
+            opacity: 0.35 // Subtle pattern
+          }}
+        />
+      </div>
 
       <div className="max-w-[1240px] mx-auto px-[24px] relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
