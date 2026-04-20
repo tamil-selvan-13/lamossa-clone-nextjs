@@ -18,12 +18,11 @@ interface ButtonProps {
 }
 
 const variantClasses = {
-  primary: 'bg-black text-white',
+  primary: 'bg-white text-black',
   secondary: 'bg-transparent text-black border border-black/10 hover:bg-black/[0.03]',
   dark: 'bg-[#000000] text-white',
-  light: 'bg-white text-black border border-[#e5e7eb]',
-  outline: 'bg-transparent text-black border border-black/10 hover:bg-black/[0.03]',
-  gradient: 'bg-gradient-to-r from-white to-gray-200 text-black shadow-sm',
+  light: 'bg-white text-black border border-black/10 shadow-sm',
+  outline: 'bg-transparent text-white border border-white/10 hover:bg-white/5',
 };
 
 export default function Button({
