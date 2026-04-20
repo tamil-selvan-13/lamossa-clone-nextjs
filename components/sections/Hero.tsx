@@ -76,9 +76,9 @@ export default function Hero() {
           >
             <div className="relative flex items-center justify-center w-[12px] h-[12px]">
               <div className="absolute inset-0 rounded-full bg-[#16A34A] opacity-20 animate-ping" />
-              <div className="relative w-[8px] h-[8px] rounded-full bg-[#16A34A]" />
+              <div className="relative w-[8px] h-[8px] rounded-full bg-[#16A34A] transform scale-[0.87]" />
             </div>
-            Open for Work
+            Open fo Work
           </div>
 
           <motion.h1
