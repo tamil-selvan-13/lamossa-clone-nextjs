@@ -25,7 +25,7 @@ export default function FAQ() {
           <SectionLabel label="FAQ" />
           <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
             Got a question? <br />
-            <span className="text-black/30">We've got answers.</span>
+            <span className="text-[#5D636F]">We've got answers.</span>
           </h2>
         </FadeIn>
 

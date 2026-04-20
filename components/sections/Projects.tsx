@@ -36,7 +36,7 @@ export default function Projects() {
           <SectionLabel label="PROJECTS" />
           <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
             Here's what <br />
-            <span className="text-black/30">the momentum looks like.</span>
+            <span className="text-[#5D636F]">the momentum looks like.</span>
           </h2>
         </div>
 

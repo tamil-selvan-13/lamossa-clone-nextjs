@@ -30,7 +30,7 @@ export default function Stats() {
           <SectionLabel label="IMPACT" />
           <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
              Lamosa makes it simple, <br />
-             <span className="text-black/30">and delivers results.</span>
+             <span className="text-[#5D636F]">and delivers results.</span>
           </h2>
         </FadeIn>
 
@@ -46,7 +46,7 @@ export default function Stats() {
                 delay: i * 0.15, 
                 ease: [0.2, 0.8, 0.2, 1] 
               }}
-              className="group flex flex-col p-[32px] rounded-[32px] bg-[#F9F9F9] border border-black/5 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-black/10 transition-all duration-500 ease-out"
+              className="group flex flex-col p-[32px] rounded-[32px] bg-white border border-[#EBECEF] hover:bg-white shadow-[0_4px_16px_-6px_rgba(161,161,170,0.15),0_4px_1px_-0.625px_rgba(161,161,170,0.05)] transition-all duration-500 ease-out"
             >
               <div className="text-[48px] md:text-[56px] font-bold tracking-[-0.04em] text-black leading-none mb-6 transition-transform duration-500 group-hover:scale-[1.02] origin-left">
                 {stat.number}
@@ -59,7 +59,7 @@ export default function Stats() {
                 
                 <div className="h-[1px] w-full bg-black/5 mb-6" />
                 
-                <p className="text-[15px] md:text-[16px] text-black/60 leading-relaxed font-medium">
+                <p className="text-[15px] md:text-[16px] text-[#5D636F] leading-relaxed font-medium">
                   {stat.body}
                 </p>
               </div>

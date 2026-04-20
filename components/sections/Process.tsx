@@ -85,7 +85,7 @@ export default function Process() {
               
               <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black">
                 Proven & effective process. <br />
-                <span className="text-black/30">That delivers results.</span>
+                <span className="text-[#5D636F]">That delivers results.</span>
               </h2>
 
               <p className="text-[17px] md:text-[18px] text-black/60 max-w-[380px] leading-relaxed font-medium mt-10">

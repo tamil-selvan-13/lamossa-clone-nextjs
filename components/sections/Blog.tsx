@@ -41,7 +41,7 @@ export default function Blog() {
           <SectionLabel label="OUR BLOG" />
           <h2 className="text-[48px] md:text-[56px] font-bold mb-8 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
             Fresh insights & ideas <br />
-            <span className="text-black/30">from the team.</span>
+            <span className="text-[#5D636F]">from the team.</span>
           </h2>
           <p className="text-[18px] text-[#6B7280] max-w-[700px]">
             Expert tips, case studies, and trends to help you design, grow, and convert smarter.

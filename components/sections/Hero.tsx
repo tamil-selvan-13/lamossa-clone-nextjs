@@ -53,9 +53,11 @@ export default function Hero() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, #e5e7eb 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-          opacity: '0.5'
+          backgroundImage: 'url("https://framerusercontent.com/images/jIzgWv1ngkkV3oGhfkZy0ymiHU.png?width=114&height=114")',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: 'center top',
+          backgroundSize: '32px',
+          opacity: '0.4'
         }}
       />
 

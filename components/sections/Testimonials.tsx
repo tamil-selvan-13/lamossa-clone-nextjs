@@ -43,7 +43,7 @@ export default function Testimonials() {
             {/* The Main Title */}
             <h1 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
               We're loved. <br />
-              <span className="text-black/30">Just success stories.</span>
+              <span className="text-[#5D636F]">Just success stories.</span>
             </h1>
           </motion.div>
         </div>
