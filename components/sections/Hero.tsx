@@ -45,12 +45,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
+    <section 
       ref={sectionRef}
-      id="section-hero"
+      id="section-hero" 
       className="relative flex flex-col justify-center pt-[140px] pb-10 min-h-screen bg-white overflow-hidden"
     >
-      <div
+      <div 
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(circle, #e5e7eb 1px, transparent 1px)',
@@ -87,13 +87,13 @@ export default function Hero() {
           </p>
 
           <div 
-            className="flex flex-row justify-center items-center gap-[16px] mb-[48px]"
+            className="flex flex-row justify-center items-center gap-[14px] mb-[48px]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.3s' }}
           >
-            <Button href="/contact-us" variant="dark">
+            <Button href="/contact-us" variant="primary">
               Book A Call
             </Button>
-            <Button href="/projects" variant="light">
+            <Button href="/projects" variant="secondary">
               View Projects
             </Button>
           </div>

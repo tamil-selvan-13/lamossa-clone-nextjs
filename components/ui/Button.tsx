@@ -5,7 +5,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 interface ButtonProps {
-  variant?: 'dark' | 'light' | 'outline' | 'gradient';
+  variant?: 'primary' | 'secondary' | 'dark' | 'light' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
   href?: string;
@@ -17,22 +17,17 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const sizeClasses = {
-  sm: 'px-[20px] py-[10px] text-[14px]',
-  md: 'px-[32px] py-[16px] text-[16px]',
-  lg: 'px-[40px] py-[20px] text-[18px]',
-};
-
 const variantClasses = {
+  primary: 'bg-black text-white',
+  secondary: 'bg-transparent text-black border border-black/10 hover:bg-black/[0.03]',
   dark: 'bg-[#000000] text-white',
   light: 'bg-white text-black border border-[#e5e7eb]',
-  outline: 'border border-white/20 text-white hover:bg-white/10',
+  outline: 'bg-transparent text-black border border-black/10 hover:bg-black/[0.03]',
   gradient: 'bg-gradient-to-r from-white to-gray-200 text-black shadow-sm',
 };
 
 export default function Button({
-  variant = 'dark',
-  size = 'md',
+  variant = 'primary',
   children,
   href,
   target,
@@ -43,11 +38,11 @@ export default function Button({
   disabled = false,
 }: ButtonProps) {
   
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-full transition-all duration-[600ms] ease-out select-none cursor-pointer';
-  const btnClass = `${baseStyles} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const baseStyles = 'inline-flex items-center justify-center px-[26px] py-[11px] text-[14.5px] font-medium rounded-[999px] transition-all duration-[350ms] ease-out select-none cursor-pointer';
+  const btnClass = `${baseStyles} ${variantClasses[variant]} ${className}`;
 
   const motionProps = {
-    whileHover: { scale: 1.05 },
+    whileHover: { scale: 1.04 },
     whileTap: { scale: 0.98 },
   };
 
@@ -55,7 +50,7 @@ export default function Button({
     <span className="flex items-center gap-2">
       {children}
       {showArrow && (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       )}
