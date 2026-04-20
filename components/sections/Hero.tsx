@@ -64,12 +64,12 @@ export default function Hero() {
       <div className="max-w-[1240px] mx-auto px-[24px] relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
           <div
-            className="inline-flex items-center justify-center gap-[10px] px-[14px] py-[6px] mb-[40px] bg-white text-[#171717] rounded-full text-[14px] font-bold border border-black/[0.08] shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+            className="inline-flex items-center justify-center gap-[10px] px-[14px] py-[6px] mb-[40px] bg-white text-[#171717] rounded-full text-[14px] font-bold border border-black/[0.08] shadow-[0_4px_16px_-6px_rgba(66,75,87,0.2),0_2px_1px_-0.625px_rgba(41,49,61,0.1)]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
             <div className="relative flex items-center justify-center w-[10px] h-[10px]">
-              <span className="absolute inline-flex w-full h-full rounded-full bg-[#16A34A] opacity-30 animate-pulse"></span>
-              <span className="relative inline-flex rounded-full w-[8px] h-[8px] bg-[#16A34A]"></span>
+              <div className="absolute inline-flex w-full h-full rounded-full bg-[#16A34A] opacity-30 animate-pulse"></div>
+              <div className="relative inline-flex rounded-full w-[8px] h-[8px] bg-[#16A34A]"></div>
             </div>
             Open for Work
           </div>
@@ -95,13 +95,13 @@ export default function Hero() {
             <Button href="/contact-us" variant="dark" showArrow>
               Book A Call
             </Button>
-            <Button href="/projects" variant="secondary" className="bg-white border-[#EBECEF] hover:bg-gray-50">
+            <Button href="/projects" variant="secondary" className="bg-white border-[#EBECEF] hover:bg-gray-50 shadow-[0_4px_12px_rgba(63,63,70,0.1)]">
               View Projects
             </Button>
           </div>
 
           <div
-            className="flex items-center justify-center gap-4"
+            className="flex items-center justify-center gap-[24px]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.4s' }}
           >
             <div className="flex -space-x-3">
@@ -111,15 +111,15 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col items-start">
-              <div className="flex items-center gap-0.5 mb-0.5">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-0.5">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#FFA300">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 ))}
               </div>
-              <span className="text-xs font-bold text-[#0c111c] tracking-tight">From 150+ reviews</span>
+              <span className="text-[14px] font-bold text-[#0c111c] tracking-tight">From 150+ reviews</span>
             </div>
           </div>
         </div>
