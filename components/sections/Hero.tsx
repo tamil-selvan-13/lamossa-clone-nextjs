@@ -62,16 +62,16 @@ export default function Hero() {
       <div className="max-w-[1240px] mx-auto px-[24px] relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
           <div
-            className="inline-flex items-center justify-center gap-[8px] px-[16px] py-[6px] mb-[40px] bg-[#F3F4F6] text-[#374151] rounded-full text-[14px] font-semibold border border-black/[0.03]"
+            className="inline-flex items-center justify-center gap-[10px] px-[14px] py-[6px] mb-[40px] bg-white text-[#171717] rounded-full text-[14px] font-bold border border-black/[0.08] shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
           >
-            <div className="relative flex items-center justify-center w-[8px] h-[8px]">
-              <span className="absolute inline-flex w-full h-full rounded-full bg-[#22C55E] opacity-75 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
-              <span className="relative inline-flex rounded-full w-[8px] h-[8px] bg-[#22C55E]"></span>
+            <div className="relative flex items-center justify-center w-[10px] h-[10px]">
+              <span className="absolute inline-flex w-full h-full rounded-full bg-[#16A34A] opacity-30 animate-pulse"></span>
+              <span className="relative inline-flex rounded-full w-[8px] h-[8px] bg-[#16A34A]"></span>
             </div>
-            Open for work
+            Open for Work
           </div>
- 
+
           <h1
             className="text-[64px] font-bold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[780px] mx-auto"
             style={{ fontFamily: 'Satoshi, sans-serif', opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.1s' }}
@@ -93,30 +93,32 @@ export default function Hero() {
             <Button href="/contact-us" variant="dark" showArrow>
               Book A Call
             </Button>
-            <Button href="/projects" variant="secondary">
+            <Button href="/projects" variant="secondary" className="bg-white border-[#EBECEF] hover:bg-gray-50">
               View Projects
             </Button>
           </div>
 
           <div
-            className="flex items-center justify-center gap-3"
+            className="flex items-center justify-center gap-4"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.4s' }}
           >
             <div className="flex -space-x-3">
               {avatars.map((avatar, i) => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative">
+                <div key={i} className="w-[34px] h-[34px] rounded-full border-[1.5px] border-white overflow-hidden relative shadow-sm">
                   <img src={avatar} alt={`User ${i + 1}`} className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-1">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#161d27">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              ))}
+            <div className="flex flex-col items-start">
+              <div className="flex items-center gap-0.5 mb-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#FFA300">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="text-xs font-bold text-[#0c111c] tracking-tight">From 150+ reviews</span>
             </div>
-            <span className="text-xs text-[#0c111c]">From 150+ reviews</span>
           </div>
         </div>
 
