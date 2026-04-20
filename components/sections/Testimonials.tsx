@@ -87,13 +87,13 @@ export default function Testimonials() {
               <p className="text-2xl text-[#e1443a] font-bold" style={{ fontFamily: 'Satoshi, sans-serif' }}>Unstoppable Growth.</p>
             </div>
             <div className="text-center">
-              <Button href="/contact-us" variant="light">Book A Call</Button>
+              <Button href="/contact-us" variant="dark" showArrow>Book A Call</Button>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 text-center">
-          <Button href="https://www.trustpilot.com/" target="_blank" variant="light">View All Reviews</Button>
+        <div className="mt-8 flex justify-end">
+          <Button href="https://www.trustpilot.com/" target="_blank" variant="light" showArrow>View All Reviews</Button>
         </div>
 
         <div className="flex items-center justify-center gap-3 mt-8">

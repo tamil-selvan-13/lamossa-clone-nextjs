@@ -122,8 +122,8 @@ export default function Blog() {
             </div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Button href="/blog" variant="light">Read More</Button>
+          <div className="mt-8 flex justify-end">
+            <Button href="/blog" variant="light" showArrow>Read More</Button>
           </div>
         </div>
       </div>

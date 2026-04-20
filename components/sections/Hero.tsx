@@ -90,7 +90,7 @@ export default function Hero() {
             className="flex flex-row justify-center items-center gap-[14px] mb-[48px]"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.3s' }}
           >
-            <Button href="/contact-us" variant="primary">
+            <Button href="/contact-us" variant="dark" showArrow>
               Book A Call
             </Button>
             <Button href="/projects" variant="secondary">

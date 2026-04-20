@@ -81,8 +81,8 @@ export default function Projects() {
             ))}
           </div>
 
-          <div className="mt-8 text-center">
-            <Button href="/projects" variant="light" className="w-full md:w-auto">View All Projects</Button>
+          <div className="mt-8 flex justify-end">
+            <Button href="/projects" variant="light" showArrow>View All Projects</Button>
           </div>
         </div>
       </div>

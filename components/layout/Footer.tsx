@@ -25,7 +25,7 @@ export default function Footer() {
               <span className="text-sm">Open for work</span>
             </Link>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/contact-us">Book A Call</Button>
+              <Button href="/contact-us" variant="dark" showArrow>Book A Call</Button>
               <Button href="/#section-pricing" variant="light">View Plans</Button>
             </div>
           </div>

@@ -45,7 +45,7 @@ export default function Services() {
               </h1>
             </div>
 
-            <Button href="/contact-us" variant="dark">
+            <Button href="/contact-us" variant="light" showArrow>
               Start A Project
             </Button>
           </div>
