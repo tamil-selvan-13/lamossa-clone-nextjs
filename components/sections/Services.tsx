@@ -40,8 +40,9 @@ export default function Services() {
                 <SectionLabel label="Services" />
               </div>
               
-              <h1 className="text-[48px] font-bold tracking-[-0.05em] text-[#000000] font-sans max-w-[650px] leading-[1.05]">
-                From idea to scale. We master our craft.
+              <h1 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black">
+                From idea to scale. <br />
+                <span className="text-black/30">We master our craft.</span>
               </h1>
             </div>
 

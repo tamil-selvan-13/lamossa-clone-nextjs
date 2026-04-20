@@ -39,8 +39,9 @@ export default function Blog() {
       <div className="max-w-[1240px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-start mb-16">
           <SectionLabel label="OUR BLOG" />
-          <h2 className="text-[60px] font-black tracking-[-0.05em] text-[#000000] leading-[1.05] mb-8 mt-4">
-            Fresh insights & ideas.
+          <h2 className="text-[48px] md:text-[56px] font-bold mb-8 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
+            Fresh insights & ideas <br />
+            <span className="text-black/30">from the team.</span>
           </h2>
           <p className="text-[18px] text-[#6B7280] max-w-[700px]">
             Expert tips, case studies, and trends to help you design, grow, and convert smarter.

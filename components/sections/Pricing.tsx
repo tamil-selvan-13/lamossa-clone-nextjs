@@ -84,8 +84,9 @@ export default function Pricing() {
       <div className="max-w-[1240px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-center text-center mb-20">
           <SectionLabel label="PRICING" />
-          <h2 className="text-[60px] font-bold tracking-[-0.05em] text-black leading-[1.05] mb-4 mt-4">
-            Choose a plan.
+          <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
+            Choose a plan. <br />
+            <span className="text-black/30">That fits your needs.</span>
           </h2>
           <p className="text-[18px] text-black/60 max-w-[600px] mx-auto leading-relaxed">
             Flexible plans designed to accelerate growth, with solutions that evolve as your business scales.

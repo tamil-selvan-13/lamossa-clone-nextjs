@@ -24,12 +24,13 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="section-stats" className="py-[120px] bg-white">
-      <div className="max-w-[1120px] mx-auto px-[24px]">
+    <section id="section-stats" className="py-[160px] bg-white">
+      <div className="max-w-[1240px] mx-auto px-[24px]">
         <FadeIn className="flex flex-col items-center text-center mb-16">
           <SectionLabel label="IMPACT" />
-          <h2 className="text-[48px] md:text-[56px] font-bold tracking-[-0.04em] text-black leading-[1.1] mb-4 mt-4">
-            Numbers that speak.
+          <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
+             Lamosa makes it simple, <br />
+             <span className="text-black/30">and delivers results.</span>
           </h2>
         </FadeIn>
 

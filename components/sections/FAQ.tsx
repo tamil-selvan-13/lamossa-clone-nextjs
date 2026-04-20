@@ -18,13 +18,14 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="section-faq" className="py-[120px] bg-[#F9F9F9]">
+    <section id="section-faq" className="py-[160px] bg-[#F9F9F9]">
       <div className="max-w-[800px] mx-auto px-6">
         
         <FadeIn className="flex flex-col items-center text-center mb-16">
           <SectionLabel label="FAQ" />
-          <h2 className="text-[56px] font-black tracking-[-0.04em] text-[#000000] leading-[1.1]">
-            We've got answers.
+          <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
+            Got a question? <br />
+            <span className="text-black/30">We've got answers.</span>
           </h2>
         </FadeIn>
 
