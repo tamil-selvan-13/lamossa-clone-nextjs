@@ -40,14 +40,13 @@ export default function CTAButton({
         </motion.a>
       );
     }
-    const MotionLink = motion.create(Link);
     return (
-      <MotionLink
+      <Link
         href={href}
         className={btnClass}
       >
         {children}
-      </MotionLink>
+      </Link>
     );
   }
 

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Button from '../ui/Button';
-import CTAButton from '../ui/CTAButton';
 
 const leftQuotes = [
   { text: "Love the flexibility—my brand looks amazing on this template.", author: "Chloe D" },
@@ -24,38 +23,22 @@ const leftRotations = [-8, -4, 0, 4];
 const rightRotations = [8, 4, 0, -4];
 
 const avatars = [
-  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
-  'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
-  'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
+  'https://framerusercontent.com/images/IEkAyD8FxrKesSO05azGbu6cOU.jpg',
+  'https://framerusercontent.com/images/fTIxNsAqL5kAuPvnKO17blaBlqc.jpg',
+  'https://framerusercontent.com/images/IjJa1vBDDNzASjXZGBTLcNObHc.jpg',
+  'https://framerusercontent.com/images/b6L3lDYpFTgGEMCn1iAOdSuxsw.jpg',
 ];
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const [isVisible, setIsVisible] = useState(true);
 
   return (
     <section
-      ref={sectionRef}
       id="section-hero"
       className="relative flex flex-col justify-center pt-[180px] pb-[120px] min-h-[90vh] overflow-hidden"
     >
-      {/* Background Layer Container */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Base Background Layer */}
         <div className="absolute inset-0 bg-white" />
-        {/* Pattern Layer */}
         <div
           className="absolute inset-0"
           style={{
@@ -63,7 +46,7 @@ export default function Hero() {
             backgroundRepeat: 'repeat',
             backgroundPosition: 'center top',
             backgroundSize: '32px',
-            opacity: 0.35 // Subtle pattern
+            opacity: 0.15
           }}
         />
       </div>
@@ -71,8 +54,7 @@ export default function Hero() {
       <div className="max-w-[1240px] mx-auto px-[24px] relative z-10 w-full">
         <div className="flex flex-col items-center text-center">
           <div
-            className="inline-flex items-center justify-center gap-[10px] px-[14px] py-[6px] mb-[40px] bg-white text-[#171717] rounded-full text-[14px] font-bold border border-black/[0.08] shadow-[0_4px_16px_-6px_rgba(66,75,87,0.2),0_2px_1px_-0.625px_rgba(41,49,61,0.1)]"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}
+            className="inline-flex items-center justify-center gap-[10px] px-[14px] py-[6px] mb-[40px] bg-white text-[#171717] rounded-full text-[14px] font-bold border border-black/[0.08] shadow-sm"
           >
             <div className="relative flex items-center justify-center w-[12px] h-[12px]">
               <div className="absolute inset-0 rounded-full bg-[#16A34A] opacity-20 animate-ping" />
@@ -81,63 +63,20 @@ export default function Hero() {
             Open for Work
           </div>
 
-          <motion.h1
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.05, delayChildren: 0.1 }
-              }
-            }}
+          <h1
             className="text-[64px] font-bold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[780px] mx-auto"
             style={{ fontFamily: 'Satoshi, sans-serif' }}
           >
-            {"Web & Brand Design For Ambitious Founders".split(' ').map((word, i) => (
-              <motion.span
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 15 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] } }
-                }}
-                className="inline-block mr-[0.2em]"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </motion.h1>
+            Web & Brand Design For Ambitious Founders
+          </h1>
 
-          <motion.p
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.02, delayChildren: 0.3 }
-              }
-            }}
+          <p
             className="text-[15px] text-[#404040] mt-[20px] mb-[32px] max-w-[450px] w-full mx-auto leading-[1.6]"
           >
-            {"We build conversion-driven websites and marketing that attract, engage, and convert.".split(' ').map((word, i) => (
-              <motion.span
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 10 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
-                }}
-                className="inline-block mr-[0.25em]"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </motion.p>
+            We build conversion-driven websites and marketing that attract, engage, and convert.
+          </p>
 
-          <div
-            className="flex flex-row justify-center items-center gap-[14px] mb-[48px]"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.3s' }}
-          >
+          <div className="flex flex-row justify-center items-center gap-[14px] mb-[48px]">
             <Button href="/contact-us" variant="dark" showArrow>
               Book A Call
             </Button>
@@ -146,66 +85,63 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div
-            className="flex items-center justify-center gap-[24px]"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.6s ease 0.4s' }}
-          >
-            <div className="flex -space-x-3">
+          <div className="flex items-center justify-center gap-[12px]">
+            <div className="flex -space-x-[10px]">
               {avatars.map((avatar, i) => (
-                <div key={i} className="w-[34px] h-[34px] rounded-full border-[1.5px] border-white overflow-hidden relative shadow-sm">
+                <div 
+                  key={i} 
+                  className="w-[34px] h-[34px] rounded-full border-[1.5px] border-white overflow-hidden relative shadow-sm"
+                  style={{ zIndex: i + 1 }}
+                >
                   <img src={avatar} alt={`User ${i + 1}`} className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-0.5">
+            <div className="flex flex-col items-start gap-[1px]">
+              <div className="flex items-center gap-[4px]">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#FFA300">
+                  <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#FFA300">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 ))}
               </div>
-              <span className="text-[13.5px] font-bold text-[#0c111c] tracking-tight">From 150+ reviews</span>
+              <span className="text-[13px] font-semibold text-[#0c111C]" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+                From 150+ reviews
+              </span>
             </div>
           </div>
         </div>
 
-        {/* Floating Cards - Desktop Only */}
+        {/* Floating Cards */}
         <div className="hidden xl:block absolute left-0 top-[28%] -translate-x-8">
           {leftQuotes.map((q, i) => (
-            <div
+            <motion.div
               key={i}
-              className="absolute bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[22px] p-5 w-[220px] text-sm"
-              style={{
-                transform: `rotate(${leftRotations[i]}deg)`,
-                top: `${i * 165}px`,
-                left: '0px',
-                opacity: isVisible ? 1 : 0,
-                transition: `all 0.6s ease ${0.5 + i * 0.1}s`,
-              }}
+              initial={{ opacity: 0, x: -20, rotate: leftRotations[i] }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 + i * 0.1 }}
+              className="absolute bg-white/80 backdrop-blur-md border border-black/5 rounded-[22px] p-5 w-[220px] text-sm shadow-xl"
+              style={{ top: `${i * 165}px` }}
             >
               <p className="mb-3 text-[#404040]">"{q.text}"</p>
               <p className="font-medium text-[#171717]">— {q.author}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className="hidden xl:block absolute right-0 top-[28%] translate-x-8">
           {rightQuotes.map((q, i) => (
-            <div
+            <motion.div
               key={i}
-              className="absolute bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[22px] p-5 w-[220px] text-sm"
-              style={{
-                transform: `rotate(${rightRotations[i]}deg)`,
-                top: `${i * 165}px`,
-                right: '0px',
-                opacity: isVisible ? 1 : 0,
-                transition: `all 0.6s ease ${0.5 + i * 0.1}s`,
-              }}
+              initial={{ opacity: 0, x: 20, rotate: rightRotations[i] }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 + i * 0.1 }}
+              className="absolute bg-white/80 backdrop-blur-md border border-black/5 rounded-[22px] p-5 w-[220px] text-sm shadow-xl"
+              style={{ top: `${i * 165}px` }}
             >
               <p className="mb-3 text-[#404040]">"{q.text}"</p>
               <p className="font-medium text-[#171717]">— {q.author}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

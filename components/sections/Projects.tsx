@@ -1,92 +1,56 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
-import FadeIn from '../ui/FadeIn';
 import SectionLabel from '../ui/SectionLabel';
 
-const projects = [
-  { name: 'Atlas Technologies', badges: ['UX Design', 'Web Design'], href: '/projects/redesigning-atlas', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop' },
-  { name: 'Finlytics', badges: ['UI Design', 'Branding'], href: '/projects/launch-mvp-for-finlytics', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop' },
-  { name: 'Orbital Bank', badges: ['Fintech', 'UX Design', 'Web Design'], href: '/projects/orbital-website-redesign', image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop' },
-  { name: 'Echo Analytics', badges: ['UI Design', 'Motion Design'], href: '/projects/echo-analytics', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop' },
+const portfolioItems = [
+  { name: 'Atlas Technologies', badges: ['UX Design', 'Web Design'], href: '/projects/atlas', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop' },
+  { name: 'Finlytics', badges: ['UI Design', 'Branding'], href: '/projects/finlytics', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop' },
+  { name: 'Orbital Bank', badges: ['Fintech', 'UX Design', 'Web Design'], href: '/projects/orbital', image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop' },
+  { name: 'Echo Analytics', badges: ['UI Design', 'Motion Design'], href: '/projects/echo', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop' },
 ];
 
 export default function Projects() {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.2 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <FadeIn className="py-[160px] bg-[#F9F9F9]">
-      <div className="max-w-[1240px] mx-auto px-[24px]" ref={ref}>
+    <section className="py-[160px] bg-white" id="projects">
+      <div className="max-w-[1240px] mx-auto px-[24px]">
         <div className="flex flex-col items-center mb-16 text-center">
           <SectionLabel label="PROJECTS" />
-          <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
+          <h2 className="text-[48px] md:text-[56px] font-bold font-sans mt-4 text-black">
             Here's what <br />
             <span className="text-[#5D636F]">the momentum looks like.</span>
           </h2>
         </div>
 
-        <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, i) => (
-              <motion.div 
-                key={i} 
-                className="group relative bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[40px] overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.4, ease: "circOut" } }}
-                layout
-              >
-                <div className="absolute inset-0 z-10 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                  <div>
-                    <h3 className="text-xl font-medium text-white mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-                      {project.name}
-                    </h3>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.badges.map((badge, j) => (
-                        <span key={j} className="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full border border-white/30">
-                          {badge}
-                        </span>
-                      ))}
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {portfolioItems.map((project, i) => (
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group cursor-pointer"
+            >
+              <div className="aspect-[4/3] relative rounded-[32px] overflow-hidden bg-gray-100 border border-[#EBECEF]">
+                <Image src={project.image} alt={project.name} fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div className="mt-6 flex justify-between items-center">
+                <div>
+                  <h3 className="text-xl font-bold text-black" style={{ fontFamily: 'Satoshi, sans-serif' }}>{project.name}</h3>
+                  <div className="flex gap-2 mt-2">
+                    {project.badges.map((badge, j) => (
+                      <span key={j} className="text-xs font-medium text-[#5D636F] uppercase tracking-wider">{badge}</span>
+                    ))}
                   </div>
-                  <Button href={project.href} variant="light" size="sm" className="w-full">View</Button>
                 </div>
-
-                <div className="aspect-[4/3] relative bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                  <Image 
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    unoptimized
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex justify-end">
-            <Button href="/projects" variant="light" showArrow>View All Projects</Button>
-          </div>
+                <Button href={project.href} variant="light" size="sm" showArrow>View</Button>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </FadeIn>
+    </section>
   );
 }

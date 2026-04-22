@@ -1,27 +1,26 @@
 'use client';
 
 const logos = [
-  'Acme Corp',
-  'Quantum',
-  'APEX',
-  'Celestial',
+  { text: 'Acme Corp', font: 'Satoshi, sans-serif' },
+  { text: 'Quantum', font: 'Switzer, sans-serif' },
+  { text: 'APEX', font: 'Chillax, sans-serif' },
+  { text: 'Celestial', font: 'Satoshi, sans-serif' },
 ];
 
-// Quadruple the array to ensure perfectly seamless scrolling without ever running out of elements
 const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
 export default function LogoMarquee() {
   return (
-    <section className="py-[120px] bg-white overflow-hidden select-none">
-      <div className="w-full max-w-[1240px] mx-auto px-[24px] flex flex-col md:flex-row items-center gap-8">
+    <section className="py-[80px] bg-white overflow-hidden select-none">
+      <div className="w-full max-w-[1240px] mx-auto px-[24px] flex flex-col md:flex-row items-center gap-[40px]">
         
         {/* 1. The Label */}
-        <div 
-          className="flex-shrink-0 whitespace-nowrap text-[18px] font-medium" 
-          style={{ color: 'rgb(64, 64, 64)', fontFamily: 'Inter, sans-serif' }}
+        <h5 
+          className="flex-shrink-0 whitespace-nowrap text-[18px] font-bold" 
+          style={{ color: 'rgb(64, 64, 64)', fontFamily: 'Satoshi, sans-serif' }}
         >
           Trusted by top founders.
-        </div>
+        </h5>
 
         {/* 2. The Ticker Container */}
         <div 
@@ -31,16 +30,20 @@ export default function LogoMarquee() {
             WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 6%, rgb(0,0,0) 35%, rgb(0,0,0) 65%, rgba(0,0,0,0) 94%)' 
           }}
         >
-          {/* 4. Animation applied to track */}
-          <div className="flex w-max animate-marquee">
-            {duplicatedLogos.map((text, i) => (
-              <div key={i} className="flex-shrink-0 pr-[40px] flex items-center justify-center">
-                {/* 3. The Logos */}
+          <div className="flex w-max animate-marquee items-center">
+            {duplicatedLogos.map((logo, i) => (
+              <div key={i} className="flex-shrink-0 pr-[40px] flex items-center justify-center gap-2">
+                <div className="w-[24px] h-[24px] opacity-100 flex items-center justify-center">
+                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="24" height="24" rx="6" fill="rgb(93, 99, 111)" fillOpacity="0.2"/>
+                      <circle cx="12" cy="12" r="4" fill="rgb(93, 99, 111)"/>
+                   </svg>
+                </div>
                 <span 
-                  className="text-2xl font-bold uppercase tracking-[0.1em]"
-                  style={{ color: 'rgb(93, 99, 111)', fontFamily: 'Satoshi, sans-serif' }}
+                  className="text-[20px] font-bold tracking-tight"
+                  style={{ color: 'rgb(93, 99, 111)', fontFamily: logo.font }}
                 >
-                  {text}
+                  {logo.text}
                 </span>
               </div>
             ))}
@@ -55,8 +58,7 @@ export default function LogoMarquee() {
           100% { transform: translateX(-25%); } 
         }
         .animate-marquee {
-          /* Smooth, continuous animation applied to the flex track */
-          animation: marquee 20s linear infinite;
+          animation: marquee 30s linear infinite;
         }
       `}</style>
     </section>

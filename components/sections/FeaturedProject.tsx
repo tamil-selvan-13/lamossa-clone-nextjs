@@ -16,7 +16,7 @@ export default function FeaturedProject() {
         <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
           <div className="relative aspect-[16/9] bg-gray-100 rounded-[40px] overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            <Image 
+            <Image
               src={slides[0].image}
               alt={slides[0].name}
               fill
