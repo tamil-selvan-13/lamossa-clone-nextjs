@@ -6,8 +6,8 @@ import Button from '../ui/Button';
 import SectionLabel from '../ui/SectionLabel';
 
 const portfolioItems = [
-  { name: 'Atlas Technologies', badges: ['UX Design', 'Web Design'], href: '/projects/atlas', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop' },
-  { name: 'Finlytics', badges: ['UI Design', 'Branding'], href: '/projects/finlytics', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop' },
+  { name: 'Atlas Technologies', badges: ['UX Design', 'Web Design'], href: '/projects/atlas', image: '/images/project_1.png' },
+  { name: 'Finlytics', badges: ['UI Design', 'Branding'], href: '/projects/finlytics', image: '/images/project_2.png' },
   { name: 'Orbital Bank', badges: ['Fintech', 'UX Design', 'Web Design'], href: '/projects/orbital', image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop' },
   { name: 'Echo Analytics', badges: ['UI Design', 'Motion Design'], href: '/projects/echo', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop' },
 ];
@@ -16,7 +16,7 @@ export default function Projects() {
   return (
     <section className="py-[160px] bg-white" id="projects">
       <div className="max-w-[1240px] mx-auto px-[24px]">
-        <div className="flex flex-col items-center mb-16 text-center">
+        <div className="flex flex-col items-start mb-16 text-left">
           <SectionLabel label="PROJECTS" />
           <h2 className="text-[48px] md:text-[56px] font-bold font-sans mt-4 text-black">
             Here's what <br />

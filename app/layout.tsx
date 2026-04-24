@@ -27,7 +27,7 @@ export const viewport = {
   initialScale: 1,
 };
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
@@ -47,7 +47,7 @@ export default function RootLayout({
           <main className="pt-[72px]">
             {children}
           </main>
-          <div className="fixed inset-x-0 bottom-0 h-[80px] pointer-events-none z-40" style={{ 
+          <div className="fixed inset-x-0 bottom-0 h-[80px] pointer-events-none z-40" style={{
             maskImage: 'linear-gradient(to top, transparent, black 65%)',
             WebkitMaskImage: 'linear-gradient(to top, transparent, black 65%)',
             backgroundColor: '#F9F9F9'

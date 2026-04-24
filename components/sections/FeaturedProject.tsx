@@ -4,7 +4,7 @@ import Image from 'next/image';
 import FadeIn from '../ui/FadeIn';
 
 const slides = [
-  { name: 'Atlas Technologies', subtitle: 'Redesigning Atlas', badges: ['UX Design', 'Web Design'], image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=675&fit=crop' },
+  { name: 'Atlas Technologies', subtitle: 'Redesigning Atlas', badges: ['UX Design', 'Web Design'], image: '/images/featured_project.png' },
   { name: 'Mobile App Design', subtitle: 'App Development', badges: ['UI Design'], image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=675&fit=crop' },
   { name: 'Brand Identity', subtitle: 'Visual Design', badges: ['Branding'], image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=675&fit=crop' },
 ];
@@ -12,7 +12,7 @@ const slides = [
 export default function FeaturedProject() {
   return (
     <FadeIn className="py-[120px] bg-[#F9F9F9]">
-      <div className="max-w-[1120px] mx-auto px-[24px]">
+      <div className="max-w-[1240px] mx-auto px-[24px]">
         <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
           <div className="relative aspect-[16/9] bg-gray-100 rounded-[40px] overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

@@ -1,5 +1,6 @@
 import Hero from '@/components/sections/Hero';
-import Features from '@/components/sections/Features';
+import FeaturedProject from '@/components/sections/FeaturedProject';
+import LogoMarquee from '@/components/sections/LogoMarquee';
 import Stats from '@/components/sections/Stats';
 import Services from '@/components/sections/Services';
 import Projects from '@/components/sections/Projects';
@@ -9,13 +10,12 @@ import Pricing from '@/components/sections/Pricing';
 import TestimonialCTA from '@/components/sections/TestimonialCTA';
 import FAQ from '@/components/sections/FAQ';
 import Blog from '@/components/sections/Blog';
-import LogoMarquee from '@/components/sections/LogoMarquee';
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Features />
+      <FeaturedProject />
       <LogoMarquee />
       <Stats />
       <Services />

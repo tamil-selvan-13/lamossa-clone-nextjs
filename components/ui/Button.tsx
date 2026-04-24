@@ -25,8 +25,15 @@ const variantClasses = {
   outline: 'bg-transparent text-white border border-white/10 hover:bg-white/5',
 };
 
+const sizeClasses = {
+  sm: 'px-[14px] py-[8px] text-[13px]',
+  md: 'px-[26px] py-[14px] text-[14px]',
+  lg: 'px-[32px] py-[18px] text-[16px]',
+};
+
 export default function Button({
   variant = 'primary',
+  size = 'md',
   children,
   href,
   target,
@@ -40,8 +47,8 @@ export default function Button({
   const darkShadow = '0px 4px 16px -6px rgba(66, 75, 87, 0.2), 0px 2.3514463744533716px 0.9405785497813484px -0.625px rgba(41, 49, 61, 0.1), 0px 5.573343114665477px 2.22933724586619px -1.25px rgba(41, 49, 61, 0.1), 0px 10.166353931039337px 4.066541572415734px -1.875px rgba(41, 49, 61, 0.09), 0px 16.901543001731625px 6.760617200692648px -2.5px rgba(41, 49, 61, 0.09), 0px 27.294613810739246px 10.917845524295696px -3.125px rgba(41, 49, 61, 0.08), 0px 44.67857465039123px 17.87142986015649px -3.75px rgba(41, 49, 61, 0.07), 0px 76.93348846871523px 30.773395387486083px -4.375px rgba(41, 49, 61, 0.05), 0px 140px 55.999999999999986px -5px rgba(41, 49, 61, 0)';
   const secondaryShadow = '0px 4px 12px 0px rgba(63, 63, 70, 0.15), 0px 1.0077627319085878px 0.6046576391451528px -0.625px rgba(39, 39, 42, 0.05), 0px 2.3885756205709185px 1.4331453723425513px -1.25px rgba(39, 39, 42, 0.05), 0px 4.357008827588287px 2.614205296552973px -1.875px rgba(39, 39, 42, 0.05), 0px 7.2435184293135535px 4.346111057588133px -2.5px rgba(39, 39, 42, 0.04), 0px 11.697691633173964px 7.018614979904379px -3.125px rgba(39, 39, 42, 0.04), 0px 19.147960564453385px 11.488776338672032px -3.75px rgba(39, 39, 42, 0.03), 0px 32.97149505802081px 19.78289703481249px -4.375px rgba(39, 39, 42, 0.02), 0px 60px 36.00000000000001px -5px rgba(39, 39, 42, 0)';
 
-  const baseStyles = 'inline-flex items-center justify-center px-[26px] py-[14px] text-[14px] font-semibold rounded-full transition-all duration-[300ms] ease-out select-none cursor-pointer tracking-[-0.01em] leading-none';
-  const btnClass = `${baseStyles} ${variantClasses[variant]} ${className}`;
+  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-full transition-all duration-[300ms] ease-out select-none cursor-pointer tracking-[-0.01em] leading-none';
+  const btnClass = `${baseStyles} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
   const fontStyle = { fontFamily: 'Satoshi, sans-serif' };
 
   const motionProps = {

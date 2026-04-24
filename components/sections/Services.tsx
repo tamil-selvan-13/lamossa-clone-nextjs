@@ -99,7 +99,7 @@ export default function Services() {
               <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-4 shadow-lg">
                 <div className="aspect-[5/4] relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-[24px] overflow-hidden group">
                   <Image 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=640&fit=crop"
+                    src="/images/services_glow.png"
                     alt="Service Team"
                     fill
                     unoptimized

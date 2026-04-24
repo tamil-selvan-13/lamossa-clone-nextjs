@@ -29,7 +29,7 @@ export default function Testimonials() {
   return (
     <FadeIn className="py-[160px] bg-[#F9F9F9]">
       <div className="max-w-[1240px] mx-auto px-[24px]" ref={ref}>
-        <div className="flex flex-col items-start mb-16">
+        <div className="flex flex-col items-center mb-16 text-center">
           {/* Framer motion wrapper configured specifically for the requested 20px slide distance */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
