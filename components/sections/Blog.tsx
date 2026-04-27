@@ -1,9 +1,8 @@
 'use client';
 
-import Image from 'next/image';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Button from '../ui/Button';
-import FadeIn from '../ui/FadeIn';
-import SectionLabel from '../ui/SectionLabel';
 
 const posts = [
   { 
@@ -11,8 +10,8 @@ const posts = [
     author: 'Tarek El-Hassan', 
     date: 'Jul 9, 2025', 
     readTime: '8 min',
-    badges: ['Motion Design', 'Design'],
-    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=640&fit=crop',
+    tags: ['Motion Design', 'Design'],
+    image: '/images/blog_office.png',
     featured: true 
   },
   { 
@@ -20,112 +19,162 @@ const posts = [
     author: 'Maya Koji', 
     date: 'Jun 18, 2025', 
     readTime: '9 min',
-    badges: ['Design', 'Technology'],
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=600&fit=crop'
+    tags: ['Design', 'Technology'],
+    image: '/images/project_1.png'
   },
   { 
     title: "Building an MVP That Doesn't Suck: 6 Rules to Follow", 
     author: 'Amina Johnson', 
     date: 'Jul 4, 2025', 
     readTime: '12 min',
-    badges: ['product-development', 'Design'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop'
+    tags: ['product-development', 'Design'],
+    image: '/images/project_2.png'
   },
 ];
 
-export default function Blog() {
-  return (
-    <section id="section-blogs" className="py-[160px] pb-12 bg-[#F9F9F9]">
-      <div className="max-w-[1240px] mx-auto px-[24px]">
-        <FadeIn className="flex flex-col items-start mb-16">
-          <SectionLabel label="OUR BLOG" />
-          <h2 className="text-[48px] md:text-[56px] font-bold mb-8 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
-            Fresh insights & ideas <br />
-            <span className="text-[#5D636F]">from the team.</span>
-          </h2>
-          <p className="text-[18px] text-[#6B7280] max-w-[700px]">
-            Expert tips, case studies, and trends to help you design, grow, and convert smarter.
-          </p>
-        </FadeIn>
+const BlogCard = ({ post, featured }: { post: any, featured?: boolean }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
 
-        <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[64px] p-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] overflow-hidden group">
-              <div className="aspect-[5/4] relative bg-gray-100">
-                <Image 
-                  src={posts[0].image}
-                  alt={posts[0].title}
-                  fill
-                  unoptimized
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-4 right-4 bg-[rgba(93,99,111,0.4)] backdrop-blur rounded-full px-3 py-1">
-                  <span className="text-xs text-white">Featured</span>
-                </div>
-              </div>
-              <div className="p-4">
-                <div className="flex items-center gap-2 text-sm text-[#737373] mb-2">
-                  <span>{posts[0].author}</span>
-                  <span>•</span>
-                  <span>{posts[0].date}</span>
-                  <span>•</span>
-                  <span>{posts[0].readTime}</span>
-                </div>
-                <h3 className="text-xl font-medium text-[#171717] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-                  {posts[0].title}
-                </h3>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    {posts[0].badges.map((badge, i) => (
-                      <span key={i} className="bg-[#F9F9F9] text-xs px-2 py-1 rounded-full">{badge}</span>
-                    ))}
-                  </div>
-                  <span className="w-8 h-8 rounded-full border border-[#d4d8dd] flex items-center justify-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5d636f" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
+  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1.1, 1]);
+
+  if (featured) {
+    return (
+      <div ref={containerRef} className="relative">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: 'spring', stiffness: 66, damping: 20 }}
+          className="bg-white rounded-[40px] border border-[#ebecef] p-4 shadow-sm group hover:shadow-xl transition-all duration-500"
+        >
+          <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden mb-8">
+            <motion.img
+              src={post.image}
+              alt={post.title}
+              style={{ scale: imageScale }}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute top-6 right-6 px-3 py-1 bg-white/20 glass-blur border border-white/30 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white">Featured</span>
+            </div>
+          </div>
+          <div className="px-4 pb-4">
+            <div className="flex items-center gap-2 text-[14px] text-[#737373] font-medium mb-3" style={{ fontFamily: 'var(--font-inter)' }}>
+              <span>{post.author}</span>
+              <div className="w-1 h-1 bg-[#d4d8dd] rounded-full" />
+              <span>{post.date}</span>
+              <div className="w-1 h-1 bg-[#d4d8dd] rounded-full" />
+              <span>{post.readTime}</span>
+            </div>
+            <h3 className="text-[28px] font-bold text-[#171717] mb-6 leading-tight" style={{ fontFamily: 'var(--font-satoshi)', letterSpacing: '-0.03em' }}>
+              {post.title}
+            </h3>
+            <div className="flex items-center justify-between">
+              <div className="flex gap-2">
+                {post.tags.map((tag: string) => (
+                  <span key={tag} className="px-3 py-1 bg-[#f6f7f8] rounded-full text-[10px] font-bold text-[#737373] uppercase tracking-wider">
+                    {tag}
                   </span>
-                </div>
+                ))}
+              </div>
+              <div className="w-10 h-10 rounded-full border border-[#ebecef] flex items-center justify-center text-[#171717] group-hover:bg-[#171717] group-hover:text-white transition-colors duration-300">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M7 17l10-10M7 7h10v10" />
+                </svg>
               </div>
             </div>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 
-            <div className="space-y-6">
-              {posts.slice(1).map((post, i) => (
-                <div key={i} className="bg-white/[0.03] backdrop-blur-lg border border-white/[0.08] rounded-[32px] p-4 flex gap-4 group">
-                  <div className="w-[30%] aspect-square relative bg-gray-100 rounded-2xl overflow-hidden">
-                    <Image 
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      unoptimized
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 text-sm text-[#737373] mb-2">
-                      <span>{post.author}</span>
-                      <span>•</span>
-                      <span>{post.date}</span>
-                      <span>•</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    <h3 className="text-lg font-medium text-[#171717] mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-                      {post.title}
-                    </h3>
-                    <div className="flex gap-2">
-                      {post.badges.map((badge, j) => (
-                        <span key={j} className="bg-[#F9F9F9] text-xs px-2 py-1 rounded-full">{badge}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+  return (
+    <div ref={containerRef} className="relative">
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ type: 'spring', stiffness: 66, damping: 20 }}
+        className="bg-white rounded-[32px] border border-[#ebecef] p-4 flex gap-6 group hover:shadow-lg transition-all duration-500"
+      >
+        <div className="flex-1">
+          <div className="flex items-center gap-2 text-[12px] text-[#737373] font-medium mb-2" style={{ fontFamily: 'var(--font-inter)' }}>
+            <span>{post.author}</span>
+            <div className="w-1 h-1 bg-[#d4d8dd] rounded-full" />
+            <span>{post.date}</span>
+          </div>
+          <h4 className="text-[18px] font-bold text-[#171717] mb-4 leading-snug" style={{ fontFamily: 'var(--font-satoshi)', letterSpacing: '-0.02em' }}>
+            {post.title}
+          </h4>
+          <div className="flex items-center justify-between">
+            <div className="flex gap-2">
+              {post.tags.slice(0, 1).map((tag: string) => (
+                <span key={tag} className="px-3 py-1 bg-[#f6f7f8] rounded-full text-[10px] font-bold text-[#737373] uppercase tracking-wider">
+                  {tag}
+                </span>
               ))}
             </div>
+            <div className="w-8 h-8 rounded-full border border-[#ebecef] flex items-center justify-center text-[#171717] group-hover:bg-[#171717] group-hover:text-white transition-colors duration-300">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M7 17l10-10M7 7h10v10" />
+              </svg>
+            </div>
           </div>
+        </div>
+        <div className="w-32 h-32 rounded-[24px] overflow-hidden flex-shrink-0">
+          <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+      </motion.div>
+    </div>
+  );
+};
 
-          <div className="mt-8 flex justify-end">
-            <Button href="/blog" variant="light" showArrow>Read More</Button>
+export default function Blog() {
+  return (
+    <section className="section-padding bg-white">
+      <div className="max-content-width">
+        <div className="flex flex-col items-start mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 66, damping: 20 }}
+            className="pill-badge mb-6"
+          >
+            <div className="w-2 h-2 bg-[#e1443a] rounded-sm" />
+            <span className="text-[#404040] font-bold">Our Blog</span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 0.1 }}
+            className="text-[40px] md:text-[48px] font-bold tracking-[-0.05em] leading-[1.1]"
+            style={{ fontFamily: 'var(--font-satoshi)' }}
+          >
+            <span className="text-[#171717]">Fresh insights & ideas</span><br />
+            <span className="text-[#a3a3a3]">from the team.</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <BlogCard post={posts[0]} featured />
+          <div className="flex flex-col gap-6">
+            <BlogCard post={posts[1]} />
+            <BlogCard post={posts[2]} />
           </div>
+        </div>
+
+        <div className="flex justify-center">
+          <Button variant="outline" size="lg" showArrow>
+            Read More
+          </Button>
         </div>
       </div>
     </section>

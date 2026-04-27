@@ -1,26 +1,23 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import Button from '../ui/Button';
 
 const leftQuotes = [
-  { text: "Love the flexibility—my brand looks amazing on this template.", author: "Chloe D" },
-  { text: "Saved me weeks of work, and the result looks professional.", author: "Ethan J." },
-  { text: "The updates and attention to detail are unmatched.", author: "Nora S" },
-  { text: "Helped me go live in days, not weeks—highly recommend.", author: "Marcus T" },
+  { text: "Love the flexibility—my brand looks amazing on this template.", author: "Chloe D", rotation: -8 },
+  { text: "Saved me weeks of work, and the result looks professional.", author: "Ethan J.", rotation: -4 },
+  { text: "The updates and attention to detail are unmatched.", author: "Nora S", rotation: 0, featured: true },
+  { text: "Helped me go live in days, not weeks—highly recommend.", author: "Marcus T", rotation: 4 },
+  { text: "Clean design, modern feel, and excellent support team.", author: "Sofia L", rotation: 8 },
 ];
 
 const rightQuotes = [
-  { text: "Clean design, modern feel, and excellent support team.", author: "Sofia L" },
-  { text: "Exactly what I needed to kickstart my SaaS project fast.", author: "Leo M." },
-  { text: "Beautiful template, easy to customize, and worth every penny.", author: "Amelia R" },
-  { text: "Super smooth experience—launched my site in no time!", author: "Daniel K" },
+  { text: "Exactly what I needed to kickstart my SaaS project fast.", author: "Leo M.", rotation: 8 },
+  { text: "Beautiful template, easy to customize, and worth every penny.", author: "Amelia R", rotation: 4 },
+  { text: "Super smooth experience—launched my site in no time!", author: "Daniel K", rotation: 0, featured: true },
+  { text: "The best investment for my startup's landing page.", author: "Sarah W.", rotation: -4 },
+  { text: "Incredible attention to detail in every component.", author: "James P.", rotation: -8 },
 ];
-
-const leftRotations = [-8, -4, 0, 4];
-const rightRotations = [8, 4, 0, -4];
 
 const avatars = [
   'https://framerusercontent.com/images/IEkAyD8FxrKesSO05azGbu6cOU.jpg',
@@ -29,120 +26,164 @@ const avatars = [
   'https://framerusercontent.com/images/b6L3lDYpFTgGEMCn1iAOdSuxsw.jpg',
 ];
 
-export default function Hero() {
-  const [isVisible, setIsVisible] = useState(true);
+const QuoteCard = ({ quote, index, side }: { quote: any, index: number, side: 'left' | 'right' }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 24 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ 
+      type: 'spring', 
+      stiffness: 66, 
+      damping: 20, 
+      delay: 2.2 + index * 0.1 
+    }}
+    className={`absolute w-[222px] p-[22px] bg-white border border-[#ebecef] rounded-[24px] shadow-sm ${quote.featured ? 'z-10 shadow-xl' : 'z-0'}`}
+    style={{ 
+      rotate: `${quote.rotation}deg`,
+      [side]: '-95px',
+      top: `${index * 130}px`,
+      willChange: 'transform'
+    }}
+  >
+    <div className="flex flex-col gap-3">
+      <svg width="14" height="12" viewBox="0 0 16 16" fill="none" className="text-[#a3a3a3]">
+        <path d="M5.333 0L4 3.333H0V11.333H7.333V3.333H6L7.333 0H5.333ZM13.333 0L12 3.333H8V11.333H15.333V3.333H14L15.333 0H13.333Z" fill="currentColor" />
+      </svg>
+      <p className="text-[12px] leading-relaxed text-[#737373]" style={{ fontFamily: 'var(--font-inter)' }}>
+        {quote.text}
+      </p>
+      <p className="text-[12px] font-bold text-[#171717]" style={{ fontFamily: 'var(--font-inter)' }}>
+        {quote.author}
+      </p>
+    </div>
+  </motion.div>
+);
 
+const AnimatedText = ({ text }: { text: string }) => {
+  const characters = Array.from(text);
   return (
-    <section
-      id="section-hero"
-      className="relative flex flex-col justify-center pt-[180px] pb-[120px] min-h-[90vh] overflow-hidden"
-    >
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-white" />
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'url("https://framerusercontent.com/images/jIzgWv1ngkkV3oGhfkZy0ymiHU.png?width=114&height=114")',
-            backgroundRepeat: 'repeat',
-            backgroundPosition: 'center top',
-            backgroundSize: '32px',
-            opacity: 0.15
+    <div className="flex flex-wrap justify-center overflow-hidden">
+      {characters.map((char, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            type: 'spring', 
+            stiffness: 50, 
+            damping: 20, 
+            delay: 0.4 + i * 0.02 
           }}
-        />
-      </div>
+          className={char === ' ' ? 'mr-[0.25em]' : ''}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </div>
+  );
+};
 
-      <div className="max-w-[1240px] mx-auto px-[24px] relative z-10 w-full">
-        <div className="flex flex-col items-center text-center">
-          <div
-            className="inline-flex items-center justify-center gap-[10px] px-[14px] py-[6px] mb-[40px] bg-white text-[#171717] rounded-full text-[14px] font-bold border border-black/[0.08] shadow-sm"
+export default function Hero() {
+  return (
+    <section className="relative pt-[140px] pb-[40px] overflow-hidden">
+      {/* Background Dot Pattern */}
+      <div className="absolute inset-0 dot-pattern opacity-40 pointer-events-none" />
+
+      <div className="max-content-width relative flex flex-col items-center">
+        {/* Floating Cards - Desktop Only */}
+        <div className="hidden xl:block absolute left-0 top-0 bottom-0 w-[300px]" style={{ maskImage: 'linear-gradient(0deg, transparent 10%, black 38%, black 62%, transparent 90%)' }}>
+          {leftQuotes.map((q, i) => (
+            <QuoteCard key={i} quote={q} index={i} side="left" />
+          ))}
+        </div>
+        
+        <div className="hidden xl:block absolute right-0 top-0 bottom-0 w-[300px]" style={{ maskImage: 'linear-gradient(0deg, transparent 10%, black 38%, black 62%, transparent 90%)' }}>
+          {rightQuotes.map((q, i) => (
+            <QuoteCard key={i} quote={q} index={i} side="right" />
+          ))}
+        </div>
+
+        {/* Hero Content */}
+        <div className="flex flex-col items-center text-center z-10">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', stiffness: 66, damping: 20 }}
+            className="pill-badge mb-6"
           >
-            <div className="relative flex items-center justify-center w-[12px] h-[12px]">
-              <div className="absolute inset-0 rounded-full bg-[#16A34A] opacity-20 animate-ping" />
-              <div className="relative w-[8px] h-[8px] rounded-full bg-[#16A34A]" />
-            </div>
-            Open for Work
-          </div>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-[#0a0a0a] font-bold">Open for Work</span>
+          </motion.div>
 
-          <h1
-            className="text-[64px] font-bold text-[#171717] leading-[1.08] tracking-[-0.04em] max-w-[780px] mx-auto"
-            style={{ fontFamily: 'Satoshi, sans-serif' }}
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 0.1, mass: 2 }}
+            className="text-[48px] md:text-[64px] font-bold text-[#171717] leading-[1.1] tracking-[-0.05em] max-w-[800px] mb-6 text-wrap-balance"
+            style={{ fontFamily: 'var(--font-satoshi)' }}
           >
             Web & Brand Design For Ambitious Founders
-          </h1>
+          </motion.h1>
 
-          <p
-            className="text-[15px] text-[#404040] mt-[20px] mb-[32px] max-w-[450px] w-full mx-auto leading-[1.6]"
-          >
-            We build conversion-driven websites and marketing that attract, engage, and convert.
-          </p>
-
-          <div className="flex flex-row justify-center items-center gap-[14px] mb-[48px]">
-            <Button href="/contact-us" variant="dark" showArrow>
-              Book A Call
-            </Button>
-            <Button href="/projects" variant="secondary" className="shadow-[0_4px_12px_rgba(63,63,70,0.1)]">
-              View Projects
-            </Button>
+          {/* Subtext */}
+          <div className="text-[18px] text-[#404040] max-w-[500px] mb-10 leading-relaxed font-medium" style={{ fontFamily: 'var(--font-inter)' }}>
+            <AnimatedText text="We build conversion-driven websites and marketing that attract, engage, and convert." />
           </div>
 
-          <div className="flex items-center justify-center gap-[12px]">
-            <div className="flex -space-x-[10px]">
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 0.8 }}
+            >
+              <Button variant="dark" size="lg" showArrow>
+                Book A Call
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 0.9 }}
+            >
+              <Button variant="outline" size="lg">
+                View Projects
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* Social Proof */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 1.0 }}
+            className="flex items-center gap-4"
+          >
+            <div className="flex -space-x-3">
               {avatars.map((avatar, i) => (
-                <div 
-                  key={i} 
-                  className="w-[34px] h-[34px] rounded-full border-[1.5px] border-white overflow-hidden relative shadow-sm"
-                  style={{ zIndex: i + 1 }}
-                >
-                  <img src={avatar} alt={`User ${i + 1}`} className="w-full h-full object-cover" />
-                </div>
+                <img
+                  key={i}
+                  src={avatar}
+                  alt="Reviewer"
+                  className="w-[34px] h-[34px] rounded-full border-[1.5px] border-white object-cover"
+                />
               ))}
             </div>
-            <div className="flex flex-col items-start gap-[1px]">
-              <div className="flex items-center gap-[4px]">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#FFA300">
+            <div className="flex flex-col items-start">
+              <div className="flex gap-0.5 text-[#FFA300]">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 ))}
               </div>
-              <span className="text-[13px] font-semibold text-[#0c111C]" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-                From 150+ reviews
-              </span>
+              <span className="text-[12px] font-bold text-[#171717]">From 150+ reviews</span>
             </div>
-          </div>
-        </div>
-
-        {/* Floating Cards */}
-        <div className="hidden xl:block absolute left-0 top-[28%] -translate-x-8">
-          {leftQuotes.map((q, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -20, rotate: leftRotations[i] }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 + i * 0.1 }}
-              className="absolute bg-white/80 backdrop-blur-md border border-black/5 rounded-[22px] p-5 w-[220px] text-sm shadow-xl"
-              style={{ top: `${i * 165}px` }}
-            >
-              <p className="mb-3 text-[#404040]">"{q.text}"</p>
-              <p className="font-medium text-[#171717]">— {q.author}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="hidden xl:block absolute right-0 top-[28%] translate-x-8">
-          {rightQuotes.map((q, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 20, rotate: rightRotations[i] }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 + i * 0.1 }}
-              className="absolute bg-white/80 backdrop-blur-md border border-black/5 rounded-[22px] p-5 w-[220px] text-sm shadow-xl"
-              style={{ top: `${i * 165}px` }}
-            >
-              <p className="mb-3 text-[#404040]">"{q.text}"</p>
-              <p className="font-medium text-[#171717]">— {q.author}</p>
-            </motion.div>
-          ))}
+          </motion.div>
         </div>
       </div>
     </section>

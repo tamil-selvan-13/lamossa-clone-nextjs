@@ -84,7 +84,7 @@ export default function TestimonialCTA() {
                 <Button 
                   href="/contact-us" 
                   variant="dark" 
-                  className="w-full sm:w-auto border border-white/20"
+                  className="w-full md:w-auto border border-white/20"
                   showArrow
                 >
                   Book A Call

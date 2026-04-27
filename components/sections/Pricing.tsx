@@ -1,204 +1,189 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
-import FadeIn from '../ui/FadeIn';
-import SectionLabel from '../ui/SectionLabel';
-
-const InfoIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40 cursor-help hover:opacity-100 transition-opacity">
-    <circle cx="12" cy="12" r="10" />
-    <line x1="12" y1="16" x2="12" y2="12" />
-    <line x1="12" y1="8" x2="12.01" y2="8" />
-  </svg>
-);
 
 const plans = [
   {
     name: 'Product design',
-    price: '$2,200',
+    price: 2200,
     priceSuffix: 'One time',
     description: 'Perfect for startups needing a high-end web presence.',
     features: [
-      { text: 'One active request at a time', info: true },
-      { text: 'Average 48 hour delivery' },
-      { text: 'Unlimited revisions' },
-      { text: 'Figma source files' },
-      { text: 'Direct communication' },
+      { text: 'Senior designer' },
+      { text: 'One Active Request', info: true },
+      { text: '7-10 Days delivery' },
+      { text: 'SEO optimized' },
+      { text: '1-1 Private Slack' },
+      { text: '50% upfront' },
     ],
-    buttonText: 'Get Started',
     hasToggle: true,
   },
   {
     name: 'Design partner',
-    price: '$4,000',
+    price: 4000,
     priceSuffix: '/ month',
     description: 'Ideal for scaling companies needing ongoing support.',
     features: [
-      { text: 'Two active requests at a time', info: true },
+      { text: 'Senior designer' },
+      { text: 'Two Active Requests', info: true },
+      { text: '5-7 Days delivery' },
       { text: 'Unlimited revisions' },
-      { text: 'Priority delivery' },
-      { text: 'Monthly CRO & Growth Strategy', info: true },
-      { text: 'Pause or cancel anytime' },
+      { text: '1-1 Private Slack' },
+      { text: 'Cancel anytime' },
     ],
-    buttonText: 'Get Started',
   },
   {
     name: 'Custom',
-    price: '$9,000',
+    price: 9000,
     pricePrefix: 'Starts at ',
-    subtitle: 'Limited spots',
-    description: 'Ideal for brands seeking unlimited design and motion support, delivering high-impact results without restrictions.',
+    description: 'Ideal for brands seeking unlimited design and motion support.',
     features: [
-      { text: 'Dedicated team & expert designers' },
+      { text: 'Dedicated team' },
       { text: 'Unlimited requests', info: true },
-      { text: '2 Days Delivery, monthly commitment' },
-      { text: 'Advanced SEO & Marketing' },
-      { text: '1-1 Private Slack channel' },
-      { text: '50% secured upfront payment' },
+      { text: '2 Days Delivery' },
+      { text: 'Advanced SEO' },
+      { text: '1-1 Private Slack' },
+      { text: 'Monthly commitment' },
     ],
-    buttonText: 'Get Started Now',
     featured: true,
+    badge: 'Limited spots',
   },
 ];
 
 export default function Pricing() {
-  const [visible, setVisible] = useState(false);
   const [is3xFaster, setIs3xFaster] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
 
   return (
-    <section id="section-pricing" className="py-[160px] bg-white" ref={ref}>
-      <div className="max-w-[1240px] mx-auto px-[24px]">
-        <FadeIn className="flex flex-col items-center text-center mb-20">
-          <SectionLabel label="PRICING" />
-          <h2 className="text-[48px] md:text-[56px] font-bold mb-6 font-sans leading-[1.05] tracking-[-0.04em] text-black mt-4">
-            Choose a plan. <br />
-            <span className="text-[#5D636F]">That fits your needs.</span>
-          </h2>
-          <p className="text-[18px] text-black/60 max-w-[600px] mx-auto leading-relaxed">
-            Flexible plans designed to accelerate growth, with solutions that evolve as your business scales.
-          </p>
-        </FadeIn>
+    <section className="section-padding bg-white">
+      <div className="max-content-width">
+        <div className="flex flex-col items-center text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 66, damping: 20 }}
+            className="pill-badge mb-6"
+          >
+            <div className="w-2 h-2 bg-[#e1443a] rounded-sm" />
+            <span className="text-[#404040] font-bold">Pricing</span>
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[28px] items-stretch">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 0.1 }}
+            className="text-[40px] md:text-[48px] font-bold tracking-[-0.05em] leading-[1.1]"
+            style={{ fontFamily: 'var(--font-satoshi)' }}
+          >
+            <span className="text-[#171717]">Choose a plan.</span><br />
+            <span className="text-[#a3a3a3]">That fits your needs.</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
           {plans.map((plan, i) => (
-            <motion.div 
-              key={i} 
-              className={`relative flex flex-col h-full p-[26px] rounded-[20px] transition-all duration-[350ms] ease-out hover:scale-[1.02] border ${
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: 'spring', stiffness: 66, damping: 20, delay: i * 0.1 }}
+              className={`relative flex flex-col p-10 rounded-[40px] border ${
                 plan.featured 
-                ? 'bg-black border-black z-10 shadow-2xl overflow-hidden' 
-                : 'bg-white border-black/5 shadow-sm'
-              } ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${i * 0.1}s` }}
+                ? 'bg-[#010309] border-[#0c111c] text-white shadow-xl' 
+                : 'bg-white border-[#ebecef] text-[#171717] shadow-sm'
+              }`}
             >
-              <div className="flex-1">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className={`text-[18px] font-medium ${plan.featured ? 'text-white' : 'text-black'}`}>
-                    {plan.name}
-                  </h3>
-                  {plan.subtitle && (
-                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md ${
-                      plan.featured ? 'bg-white/10 text-white' : 'bg-orange-100 text-orange-600'
-                    }`}>
-                      {plan.subtitle}
-                    </span>
-                  )}
+              {plan.badge && (
+                <div className="absolute top-8 right-8 px-3 py-1 bg-[#e1443a] rounded-full text-[10px] font-bold uppercase tracking-wider text-white">
+                  {plan.badge}
                 </div>
-                <div className={`text-[34px] font-semibold mt-[12px] leading-none mb-1 ${plan.featured ? 'text-white' : 'text-black'}`}>
-                  {plan.pricePrefix && <span className={`text-[14px] font-normal ${plan.featured ? 'text-white/40' : 'text-black/40'}`}>{plan.pricePrefix}</span>}
-                  {plan.hasToggle && is3xFaster ? '$3,200' : plan.price}
-                  {plan.priceSuffix && <span className={`text-[14px] font-normal ${plan.featured ? 'text-white/40' : 'text-black/40'}`}> {plan.priceSuffix}</span>}
+              )}
+
+              <div className="mb-8">
+                <div className={`w-12 h-12 rounded-full mb-6 flex items-center justify-center ${plan.featured ? 'bg-white/10' : 'bg-[#f6f7f8]'}`}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18M9 21V9" />
+                  </svg>
                 </div>
-                <p className={`text-[14px] mt-[8px] leading-relaxed ${plan.featured ? 'text-white/60' : 'text-black/60'}`}>
+                <h6 className="text-[20px] font-bold mb-2" style={{ fontFamily: 'var(--font-satoshi)' }}>{plan.name}</h6>
+                <p className={`text-[14px] leading-relaxed mb-6 ${plan.featured ? 'text-white/60' : 'text-[#737373]'}`}>
                   {plan.description}
                 </p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-[40px] font-bold" style={{ fontFamily: 'var(--font-satoshi)' }}>
+                    ${plan.hasToggle && is3xFaster ? (plan.price + 1000).toLocaleString() : plan.price.toLocaleString()}
+                  </span>
+                  <span className={`text-[14px] font-medium ${plan.featured ? 'text-white/40' : 'text-[#a3a3a3]'}`}>
+                    {plan.priceSuffix}
+                  </span>
+                </div>
+              </div>
 
-                {/* Optional Toggle for Card 1 */}
-                {plan.hasToggle && (
-                  <div className="mt-6 p-3 bg-black/5 rounded-xl flex items-center justify-between">
-                    <span className="text-[12px] font-medium text-black">3X faster delivery</span>
+              {plan.hasToggle && (
+                <div className="mb-8 p-4 bg-[#f6f7f8] rounded-[20px] flex items-center justify-between">
+                  <span className="text-[14px] font-bold text-[#171717]">3X faster delivery</span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-[12px] font-bold text-[#e1443a]">+$1k</span>
                     <button 
                       onClick={() => setIs3xFaster(!is3xFaster)}
-                      className={`w-10 h-6 rounded-full transition-colors relative flex items-center px-1 ${is3xFaster ? 'bg-orange-500' : 'bg-gray-300'}`}
+                      className={`w-10 h-6 rounded-full transition-colors relative flex items-center px-1 ${is3xFaster ? 'bg-[#e1443a]' : 'bg-[#d4d8dd]'}`}
                     >
                       <div className={`w-4 h-4 bg-white rounded-full transition-transform ${is3xFaster ? 'translate-x-4' : 'translate-x-0'}`} />
                     </button>
-                    <span className="text-[12px] font-bold text-orange-500">+$1k</span>
                   </div>
-                )}
+                </div>
+              )}
 
-                <div className={`h-[1px] my-[20px] ${plan.featured ? 'bg-white/10' : 'bg-black/10'}`} />
-
-                <ul className="mt-[16px] space-y-[10px]">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className={`flex items-center gap-3 text-[14px] ${plan.featured ? 'text-white/80' : 'text-black/80'}`}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="text-orange-400 flex-shrink-0">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      {feature.text}
-                      {feature.info && <InfoIcon />}
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex-1 space-y-4 mb-10">
+                {plan.features.map((feature, j) => (
+                  <div key={j} className="flex items-center gap-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e1443a" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span className="text-[14px] font-medium">{feature.text}</span>
+                    {feature.info && (
+                      <div className="w-4 h-4 rounded-full border border-current opacity-30 flex items-center justify-center text-[10px]">i</div>
+                    )}
+                  </div>
+                ))}
               </div>
 
-              <div className="mt-[18px]">
-                <Button 
-                  href="/contact-us" 
-                  variant={plan.featured ? 'primary' : 'dark'} 
-                  className="w-full"
-                  showArrow
-                >
-                  {plan.buttonText}
-                </Button>
-              </div>
+              <Button variant={plan.featured ? 'light' : 'dark'} className="w-full" showArrow>
+                Get Started Now
+              </Button>
             </motion.div>
           ))}
         </div>
 
-        {/* Framer Development Add-on Block - Forensic Structure */}
-        <div className="flex justify-center mt-[28px]">
-          <motion.div 
-            className={`relative flex flex-col md:flex-row items-center gap-12 p-[26px] rounded-[24px] bg-[#F9F9F9] border border-black/5 shadow-sm max-w-[760px] w-full ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            style={{ transitionDelay: '0.4s' }}
-          >
-            <div className="flex items-center gap-6 flex-1">
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-black/5">
-                <svg width="24" height="24" viewBox="0 0 14.5 22.5" fill="none" stroke="#000" strokeWidth="1.5"><path d="M0 0h14.5v7.25h-7.25l-7.25 7.25v-14.5zM7.25 7.25h7.25v7.25h-7.25v-7.25zM0 15.25h7.25v7.25l-7.25-7.25z" fill="currentColor"/></svg>
-              </div>
-              <div>
-                <h3 className="text-[18px] font-medium text-black">Framer development</h3>
-                <div className="flex items-center gap-4 mt-1">
-                  <div className="flex items-center gap-2 text-[13px] text-black/50">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
-                    Up to 8 full pages + 404 page
-                  </div>
-                  <div className="flex items-center gap-2 text-[13px] text-black/50">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-                    + $400/ additional page
-                  </div>
-                </div>
-              </div>
+        {/* Add-on Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 0.4 }}
+          className="bg-white rounded-[32px] border-2 border-dashed border-[#ebecef] p-8 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div className="flex items-center gap-6">
+            <div className="w-12 h-12 rounded-2xl bg-[#f6f7f8] flex items-center justify-center text-[#171717]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
             </div>
-
-            <Button href="/contact-us" variant="light" className="bg-[#EEE] border-transparent hover:bg-gray-200">
-              Add + $3.4k
-            </Button>
-          </motion.div>
-        </div>
+            <div>
+              <h4 className="text-[18px] font-bold text-[#171717]" style={{ fontFamily: 'var(--font-satoshi)' }}>Framer development</h4>
+              <p className="text-[14px] text-[#737373] font-medium">Add-on for your design project</p>
+            </div>
+          </div>
+          <Button variant="secondary" className="bg-[#f6f7f8] border-none shadow-none">
+            Add + $3.4k
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
