@@ -91,6 +91,18 @@
   .pill-badge {
     @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#ebecef] text-[14px] font-medium;
   }
+
+  .shadow-premium-dark {
+    box-shadow: 0px 4px 16px -6px rgba(66, 75, 87, 0.2), 
+                0px 2.35px 0.94px -0.625px rgba(41, 49, 61, 0.1), 
+                0px 5.57px 2.23px -1.25px rgba(41, 49, 61, 0.1), 
+                0px 10.17px 4.07px -1.875px rgba(41, 49, 61, 0.09), 
+                0px 16.9px 6.76px -2.5px rgba(41, 49, 61, 0.09), 
+                0px 27.29px 10.92px -3.125px rgba(41, 49, 61, 0.08), 
+                0px 44.68px 17.87px -3.75px rgba(41, 49, 61, 0.07), 
+                0px 76.93px 30.77px -4.375px rgba(41, 49, 61, 0.05), 
+                0px 140px 56px -5px rgba(41, 49, 61, 0);
+  }
 }
 
 .lenis.lenis-smooth {

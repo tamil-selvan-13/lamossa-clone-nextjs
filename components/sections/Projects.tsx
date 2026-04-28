@@ -5,10 +5,30 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Button from '../ui/Button';
 
 const projects = [
-  { name: 'Atlas Technologies', tags: ['UX Design', 'Web Design'], image: '/images/project_1.png' },
-  { name: 'Finlytics', tags: ['UI Design', 'Branding'], image: '/images/project_2.png' },
-  { name: 'Orbital Bank', tags: ['Fintech', 'UX Design', 'Web Design'], image: '/images/project_1.png' },
-  { name: 'Echo Analytics', tags: ['UI Design', 'Motion Design'], image: '/images/project_2.png' },
+  { 
+    name: 'Orbital Website Redesign', 
+    subtitle: '+21% signup conversion rate',
+    tags: ['Fintech', 'UX Design', 'Web Design'], 
+    image: '/images/project_1.png' 
+  },
+  { 
+    name: 'Redesigning Atlas', 
+    subtitle: '+45% engagement, -20% churn',
+    tags: ['UX Design', 'Web Design'], 
+    image: '/images/project_1.png' 
+  },
+  { 
+    name: 'Launch MVP for Finlytics', 
+    subtitle: 'Live in 27 days, 1,200+ early users',
+    tags: ['UI Design', 'Branding'], 
+    image: '/images/project_2.png' 
+  },
+  { 
+    name: 'Echo Analytics', 
+    subtitle: 'Modernizing data visualization',
+    tags: ['UI Design', 'Motion Design'], 
+    image: '/images/project_2.png' 
+  },
 ];
 
 const ProjectCard = ({ project, index }: { project: any, index: number }) => {
@@ -36,7 +56,10 @@ const ProjectCard = ({ project, index }: { project: any, index: number }) => {
               <h3 className="text-[20px] font-bold text-[#171717]" style={{ fontFamily: 'var(--font-satoshi)', letterSpacing: '-0.03em' }}>
                 {project.name}
               </h3>
-              <div className="flex gap-2">
+              <p className="text-[12px] text-[#737373] font-medium" style={{ fontFamily: 'var(--font-inter)' }}>
+                {project.subtitle}
+              </p>
+              <div className="flex gap-2 mt-1">
                 {project.tags.map((tag: string) => (
                   <span key={tag} className="px-3 py-1 bg-white/40 border border-white/50 rounded-full text-[10px] font-bold text-[#171717] uppercase tracking-wider">
                     {tag}

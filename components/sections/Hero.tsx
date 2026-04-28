@@ -141,7 +141,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 0.8 }}
             >
-              <Button variant="dark" size="lg" showArrow>
+              <Button variant="premium-dark" size="lg" showArrow href="/contact-us">
                 Book A Call
               </Button>
             </motion.div>
@@ -150,7 +150,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: 'spring', stiffness: 66, damping: 20, delay: 0.9 }}
             >
-              <Button variant="outline" size="lg">
+              <Button variant="premium-light" size="lg" href="/projects">
                 View Projects
               </Button>
             </motion.div>

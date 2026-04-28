@@ -5,7 +5,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'dark' | 'light' | 'outline';
+  variant?: 'primary' | 'secondary' | 'dark' | 'light' | 'outline' | 'premium-dark' | 'premium-light';
   size?: 'sm' | 'md' | 'lg' | 'hero';
   children: React.ReactNode;
   href?: string;
@@ -23,6 +23,8 @@ const variantClasses = {
   dark: 'bg-[#010309] text-white hover:bg-[#161d27]',
   light: 'bg-white text-[#0a0a0a] border border-[#ebecef] shadow-sm',
   outline: 'bg-transparent text-[#0a0a0a] border border-[#ebecef] hover:bg-[#f6f7f8]',
+  'premium-dark': 'bg-[#030712] text-white shadow-premium-dark hover:brightness-110',
+  'premium-light': 'bg-white text-[#0a0a0a] border border-[#ebecef] shadow-sm hover:bg-[#f6f7f8]',
 };
 
 const sizeClasses = {
@@ -50,7 +52,7 @@ export default function Button({
 
   const arrowCircle = showArrow && (
     <span className={`flex items-center justify-center w-[26px] h-[26px] rounded-full ml-3 transition-transform duration-300 group-hover:translate-x-1 ${
-      variant === 'dark' 
+      (variant === 'dark' || variant === 'premium-dark')
         ? 'bg-[#161d27] border border-[#424b57]' 
         : 'bg-[#f6f7f8] border border-[#ebecef]'
     }`}>

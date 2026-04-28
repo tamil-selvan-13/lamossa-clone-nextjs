@@ -31,13 +31,13 @@ export default function Navigation() {
       transition={{ type: 'spring', stiffness: 66, damping: 20 }}
       className="fixed top-0 left-0 right-0 z-50 pt-6 px-8 flex justify-center pointer-events-none"
     >
-      <nav className={`w-full max-w-[1136px] border rounded-[32px] px-3 py-3 flex items-center justify-between pointer-events-auto transition-all duration-500 ${
+      <nav className={`w-full max-w-[1136px] border rounded-[32px] px-4 py-3 flex items-center justify-between pointer-events-auto transition-all duration-500 ${
         scrolled 
         ? 'bg-white border-[#ebecef] shadow-md' 
-        : 'bg-white/0 border-transparent shadow-none'
+        : 'bg-white border-[#ebecef] shadow-none'
       }`}>
         {/* Left: Logo */}
-        <Link href="/" className="flex items-center gap-2 pl-4">
+        <Link href="/" className="flex items-center gap-2 pl-2">
           <svg width="29" height="19" viewBox="0 0 29.383 18.806" fill="none">
             <path d="M18.696 0L7.808 18.772L0 18.772L10.887 0Z M29.07 0L18.696 18.772L10.887 18.772L21.775 0Z" fill="#090909" />
             <path d="M25.992 12.054 C27.865 12.054 29.383 13.565 29.383 15.43 C29.383 17.294 27.865 18.806 25.992 18.806 C24.119 18.806 22.6 17.294 22.6 15.43 C22.6 13.565 24.119 12.054 25.992 12.054 Z" fill="#e1443a" />
@@ -71,18 +71,21 @@ export default function Navigation() {
 
         {/* Right: CTA Button */}
         <div className="flex items-center gap-3">
-          <Button variant="dark" size="sm" showArrow className="rounded-full">
-            Get Template
-          </Button>
+          <div className="hidden md:block">
+            <Button variant="dark" size="sm" showArrow className="rounded-full">
+              Get Template
+            </Button>
+          </div>
           
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle - Hamburger Inverted */}
           <button 
-            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1 bg-[#010309] rounded-full text-white"
+            className="w-[44px] h-[44px] flex flex-col items-center justify-center gap-[4.5px] bg-[#0c111c] rounded-full text-white transition-transform active:scale-95"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            <span className="w-4 h-[1.5px] bg-white rounded-full"></span>
-            <span className="w-2.5 h-[1.5px] bg-white rounded-full ml-auto mr-[12px]"></span>
-            <span className="w-4 h-[1.5px] bg-white rounded-full"></span>
+            <span className={`w-[18px] h-[1.5px] bg-white rounded-full transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-[6px]' : ''}`}></span>
+            <span className={`w-[18px] h-[1.5px] bg-white rounded-full transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`w-[18px] h-[1.5px] bg-white rounded-full transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}></span>
           </button>
         </div>
       </nav>

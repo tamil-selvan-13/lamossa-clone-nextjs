@@ -6,6 +6,12 @@ import Button from '../ui/Button';
 
 const projects = [
   {
+    title: "Orbital Website Redesign",
+    metric: "+21% signup conversion rate",
+    href: "/projects/orbital-website-redesign",
+    image: "https://framerusercontent.com/images/zvQ7tedi7AxHplgmospF42dcjQo.png"
+  },
+  {
     title: "Redesigning Atlas",
     metric: "+45% engagement, -20% churn",
     href: "/projects/redesigning-atlas",
@@ -16,12 +22,6 @@ const projects = [
     metric: "Live in 27 days, 1,200+ early users",
     href: "/projects/launch-mvp-for-finlytics",
     image: "https://framerusercontent.com/images/5kd7Hmen8Zb7gfwj1BZyuA0ko.png"
-  },
-  {
-    title: "Orbital Website Redesign",
-    metric: "+21% signup conversion rate",
-    href: "/projects/orbital-website-redesign",
-    image: "https://framerusercontent.com/images/zvQ7tedi7AxHplgmospF42dcjQo.png"
   }
 ];
 
